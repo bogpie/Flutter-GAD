@@ -1,6 +1,10 @@
 # Flutter Google Atelierul Digital
 
-Bogdan Piele 
+Fiecare tema corespunde unei surse din directorul _lib/src_. 
+
+In _lib/main.dart_ se poate alege tema dorita (exemplu: _import 'src/tema01.dart' as app;_)
+
+In _lib/demo-videos_ se afla videoclipuri care prezinta cum functioneaza aplicatia.
 
 <!--
 ## Getting Started
