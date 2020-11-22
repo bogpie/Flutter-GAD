@@ -4,7 +4,7 @@ Fiecare tema corespunde unei surse din directorul _lib/src_.
 
 In _lib/main.dart_ se poate alege tema dorita (exemplu: _import 'src/tema01.dart' as app;_)
 
-In _lib/demo-videos_ se afla videoclipuri care prezinta cum functioneaza aplicatia.
+In _lib/demo-videos_ se afla videoclipuri care prezinta cum functioneaza aplicatia. Am convertit si la formatul .gif pentru a putea fi deschise direct pe site-ul Github.
 
 <!--
 ## Getting Started
