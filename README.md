@@ -1,6 +1,6 @@
-# tema1
+# Flutter Google Atelierul Digital
 
-A new Flutter project.
+Bogdan Piele
 
 ## Getting Started
 
