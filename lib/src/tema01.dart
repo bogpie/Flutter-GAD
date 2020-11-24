@@ -21,7 +21,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String text = ''; // will change
+  String textEUR = ''; // will change
+  String textRON = ' ';
   double amountEUR = 0;
   double amountRON = 0;
   String error; // will change
@@ -52,7 +53,7 @@ class _HomePageState extends State<HomePage> {
 
                     ),
                 onChanged: (String value) {
-                  text = value; // each time we change the text we update the value, no need for refreshing with setState
+                  textEUR = value; // each time we change the text we update the value, no need for refreshing with setState
                 },
               ),
 
@@ -61,19 +62,19 @@ class _HomePageState extends State<HomePage> {
               RaisedButton(
                 child: const Text('CONVERT!'),
                 onPressed: () {
-                  if (double.tryParse(text) == null) {
+                  if (double.tryParse(textEUR) == null) {
                     setState(() {
-                      text = '';
+                      textRON = '';
                       // updating the error variable in setState
                       error = 'please enter a number';
                     });
                   }
                   else
                     setState(() {
-                      amountEUR = double.parse(text);
+                      amountEUR = double.parse(textEUR);
                       print('amount in euro is ' + amountEUR.toString());
                       amountRON = amountEUR * 4.50;
-                      text = amountRON.toStringAsFixed(2) + ' RON';
+                      textRON = amountRON.toStringAsFixed(2) + ' RON';
                       error = null;
                     });
                 },
@@ -81,7 +82,7 @@ class _HomePageState extends State<HomePage> {
 
 
               Text(
-                text,
+                textRON,
                 style: const TextStyle(
                     color: Colors.grey),
                 textScaleFactor: 3,
