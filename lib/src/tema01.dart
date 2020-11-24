@@ -24,13 +24,13 @@ class _HomePageState extends State<HomePage> {
   String text = ''; // will change
   double amountEUR = 0;
   double amountRON = 0;
-  String error = ''; // will change
+  String error; // will change
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Currency convertor'),
+          title: const Text('Currency convertor'),
           centerTitle: true,
         ),
         body: Padding(
@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
 
             children: <Widget>[
 
-              Image.network("https://previews.123rf.com/images/stefanphoto/stefanphoto1203/stefanphoto120300005/12802153-romanian-banknotes-close-up.jpg",
+              Image.network('https://previews.123rf.com/images/stefanphoto/stefanphoto1203/stefanphoto120300005/12802153-romanian-banknotes-close-up.jpg',
                 //height: 300,
               ),
 
@@ -56,10 +56,10 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
 
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
 
               RaisedButton(
-                child: Text('CONVERT!'),
+                child: const Text('CONVERT!'),
                 onPressed: () {
                   if (double.tryParse(text) == null) {
                     setState(() {
@@ -71,9 +71,9 @@ class _HomePageState extends State<HomePage> {
                   else
                     setState(() {
                       amountEUR = double.parse(text);
-                      print("amount in euro is " + amountEUR.toString());
+                      print('amount in euro is ' + amountEUR.toString());
                       amountRON = amountEUR * 4.50;
-                      text = amountRON.toStringAsFixed(2) + " RON";
+                      text = amountRON.toStringAsFixed(2) + ' RON';
                       error = null;
                     });
                 },
@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
 
               Text(
                 text,
-                style: TextStyle(
+                style: const TextStyle(
                     color: Colors.grey),
                 textScaleFactor: 3,
               )
