@@ -1,0 +1,29 @@
+name: UpCode
+on: push
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Flutter
+        uses: subosito/flutter-action@v1
+        with:
+          channel: stable
+      - uses: actions/checkout@v2
+      - name: Setup repository
+        run: flutter pub get
+      - name: Format code
+        run: flutter pub pub run --enable-asserts ci/bots/format.dart --set-exit-if-changed -n -l 120
+
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Flutter
+        uses: subosito/flutter-action@v1
+        with:
+          channel: stable
+      - uses: actions/checkout@v2
+      - name: Setup repository
+        run: flutter pub get
+      - name: Analyze code
+        run: flutter pub pub run --enable-asserts ci/bots/analyze.dart
