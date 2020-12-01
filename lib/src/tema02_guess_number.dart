@@ -25,7 +25,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool isGuessed = false;
   String feedbackText = '';
   String buttonText = 'Guess';
   String triedText = '';
@@ -33,14 +32,6 @@ class _HomePageState extends State<HomePage> {
   static Random random = Random();
   int randomNumber = random.nextInt(100) + 1;
 
-  Color _color = Color.fromARGB(220, 117, 218, 255);
-
-  String _title;
-  String _content;
-  String _yes;
-  String _no;
-  Function _yesOnPressed;
-  Function _noOnPressed;
 
   @override
   Widget build(BuildContext context) {
