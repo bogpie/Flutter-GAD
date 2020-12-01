@@ -21,7 +21,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String textEUR = ''; // will change
+  String textEUR = '';
+  // a variable that changes
   String textRON = ' ';
   double amountEUR = 0;
   double amountRON = 0;
