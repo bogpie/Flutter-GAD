@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 //import 'package:validators/validators.dart'; //actually isNumeric() doesn't support rational numbers
 
 void main() {
@@ -18,7 +19,6 @@ class Tema02App extends StatelessWidget {
 }
 
 
-
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
   static Random random = Random();
   int randomNumber = random.nextInt(100) + 1;
 
-  Color _color = Color.fromARGB(220, 117, 218 ,255);
+  Color _color = Color.fromARGB(220, 117, 218, 255);
 
   String _title;
   String _content;
@@ -115,6 +115,47 @@ class _HomePageState extends State<HomePage> {
 
                               if (guessNumber == randomNumber) {
                                 feedbackText = 'You guessed right!';
+
+                                Alert(
+                                  context: context,
+                                  type: AlertType.success,
+                                  title: "You guessed right",
+                                  desc: "It was " + randomNumber.toString(),
+                                  buttons: [
+                                    DialogButton(
+                                      child: const Text(
+                                        'Try Again',
+                                        style: TextStyle(color: Colors.white, fontSize: 20),
+                                      ),
+                                      onPressed: () {
+                                        setState(() {
+                                          randomNumber = random.nextInt(100) + 1;
+                                          feedbackText = '';
+                                          triedText = '';
+                                          buttonText = 'Guess';
+                                        });
+                                        Navigator.pop(context);
+                                      },
+                                      width: 120,
+                                    ),
+
+                                    DialogButton(
+                                        child: const Text(
+                                          'OK',
+                                          style: TextStyle(color: Colors.white, fontSize: 20),
+                                        ),
+                                        onPressed: () {
+                                          setState(() {
+                                            buttonText = 'Reset';
+                                          });
+                                          Navigator.pop(context);
+                                        },
+                                        width: 120
+                                    )
+                                  ],
+                                ).show();
+
+
                                 buttonText = 'Reset';
                               } else if (guessNumber < randomNumber) {
                                 feedbackText = 'Try higher';
