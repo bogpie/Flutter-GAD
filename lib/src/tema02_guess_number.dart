@@ -15,9 +15,7 @@ class Tema02App extends StatelessWidget {
       home: HomePage(),
     );
   }
-
 }
-
 
 class HomePage extends StatefulWidget {
   @override
@@ -31,7 +29,6 @@ class _HomePageState extends State<HomePage> {
   String guessText = '';
   static Random random = Random();
   int randomNumber = random.nextInt(100) + 1;
-
 
   @override
   Widget build(BuildContext context) {
@@ -129,7 +126,6 @@ class _HomePageState extends State<HomePage> {
                                       },
                                       width: 120,
                                     ),
-
                                     DialogButton(
                                         child: const Text(
                                           'OK',
@@ -141,11 +137,9 @@ class _HomePageState extends State<HomePage> {
                                           });
                                           Navigator.pop(context);
                                         },
-                                        width: 120
-                                    )
+                                        width: 120)
                                   ],
                                 ).show();
-
 
                                 buttonText = 'Reset';
                               } else if (guessNumber < randomNumber) {

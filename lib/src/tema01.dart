@@ -22,6 +22,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   String textEUR = '';
+
   // a variable that changes
   String textRON = ' ';
   double amountEUR = 0;
@@ -38,28 +39,24 @@ class _HomePageState extends State<HomePage> {
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-
             children: <Widget>[
-
-              Image.network('https://previews.123rf.com/images/stefanphoto/stefanphoto1203/stefanphoto120300005/12802153-romanian-banknotes-close-up.jpg',
+              Image.network(
+                'https://previews.123rf.com/images/stefanphoto/stefanphoto1203/stefanphoto120300005/12802153-romanian-banknotes-close-up.jpg',
                 //height: 300,
               ),
-
               TextField(
                 keyboardType: TextInputType.phone,
                 //
-                decoration: InputDecoration(
-                    hintText: 'enter the amount in EUR',
-                    errorText: error // used in UI for build method
+                decoration:
+                    InputDecoration(hintText: 'enter the amount in EUR', errorText: error // used in UI for build method
 
-                    ),
+                        ),
                 onChanged: (String value) {
-                  textEUR = value; // each time we change the text we update the value, no need for refreshing with setState
+                  textEUR =
+                      value; // each time we change the text we update the value, no need for refreshing with setState
                 },
               ),
-
               const SizedBox(height: 8),
-
               RaisedButton(
                 child: const Text('CONVERT!'),
                 onPressed: () {
@@ -69,8 +66,7 @@ class _HomePageState extends State<HomePage> {
                       // updating the error variable in setState
                       error = 'please enter a number';
                     });
-                  }
-                  else
+                  } else
                     setState(() {
                       amountEUR = double.parse(textEUR);
                       print('amount in euro is ' + amountEUR.toString());
@@ -80,15 +76,11 @@ class _HomePageState extends State<HomePage> {
                     });
                 },
               ),
-
-
               Text(
                 textRON,
-                style: const TextStyle(
-                    color: Colors.grey),
+                style: const TextStyle(color: Colors.grey),
                 textScaleFactor: 3,
               )
-
             ],
           ),
         ));
