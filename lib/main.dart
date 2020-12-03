@@ -1,7 +1,6 @@
 //import 'package:flutter/material.dart' ;
-import 'src/tema02_guess_number.dart' as app;
+import 'src/tema03_ticatactoe.dart' as app;
 
-void main(){
+void main() {
   app.main();
 }
-
