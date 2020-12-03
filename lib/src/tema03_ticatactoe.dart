@@ -7,7 +7,6 @@ void main() {
 
 class Tile extends StatefulWidget {
   Tile(this.index);
-
   int index;
   @override
   _TileState createState() => _TileState(index);
