@@ -12,6 +12,7 @@ dependencies:
   validators: ^2.0.0
   flutter:
     sdk: flutter
+  tuple:
   rflutter_alert: ^1.1.0
 
   cupertino_icons: ^1.0.0
