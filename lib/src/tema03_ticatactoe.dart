@@ -27,79 +27,6 @@ class _HomePageState extends State<HomePage> {
   int nrColored = 0;
   bool isGameOver = false;
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-            backgroundColor: Colors.yellow,
-            centerTitle: true,
-            title: const Text(
-              'tic-tac-toe',
-              style: TextStyle(color: Colors.black),
-            )),
-        body: Column(
-          children: <Widget>[
-            GridView.builder(
-                shrinkWrap: true,
-                itemCount: 9,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3, crossAxisSpacing: 0, mainAxisSpacing: 0),
-                itemBuilder: (BuildContext context, int index) {
-                  return GestureDetector(
-                    onTap: () {
-                      tappedTile(index);
-                    },
-                    child: AnimatedContainer(
-                      decoration: BoxDecoration(
-                        border: Border.all(width: 0.4),
-                        color: tileColors[index],
-                      ),
-                      duration: const Duration(milliseconds: 250),
-                    ),
-                  );
-                }),
-            Visibility(
-              visible: isGameOver,
-              child: RaisedButton(
-                onPressed: () {
-                  resetGame();
-                },
-                child: const Text('Play again!'),
-              ),
-            )
-          ],
-        ));
-  }
-
-  Tuple2<int, List<int>> findResult() {
-    final List<List<int>> combinations = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [2, 4, 6]
-    ];
-
-    for (final List<int> combination in combinations) {
-      if (tileColors[combination[0]] == null ||
-          tileColors[combination[1]] == null ||
-          tileColors[combination[2]] == null) {
-        continue;
-      }
-
-      final MaterialColor color = tileColors[combination[0]];
-      final int player = colorToPlayer[color];
-
-      if (color == tileColors[combination[1]] && color == tileColors[combination[2]]) {
-        return Tuple2<int, List<int>>(player, combination);
-      }
-    }
-    return Tuple2<int, List<int>>(-1, null);
-  }
-
   void tappedTile(int index) {
     if (tileColors[index] != null || isGameOver) {
       return;
@@ -181,4 +108,81 @@ class _HomePageState extends State<HomePage> {
     ).show();
     return;
   }
+
+  Tuple2<int, List<int>> findResult() {
+    final List<List<int>> combinations = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6]
+    ];
+
+    for (final List<int> combination in combinations) {
+      if (tileColors[combination[0]] == null ||
+          tileColors[combination[1]] == null ||
+          tileColors[combination[2]] == null) {
+        continue;
+      }
+
+      final MaterialColor color = tileColors[combination[0]];
+      final int player = colorToPlayer[color];
+
+      if (color == tileColors[combination[1]] && color == tileColors[combination[2]]) {
+        return Tuple2<int, List<int>>(player, combination);
+      }
+    }
+    return Tuple2<int, List<int>>(-1, null);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+            backgroundColor: Colors.yellow,
+            centerTitle: true,
+            title: const Text(
+              'tic-tac-toe',
+              style: TextStyle(color: Colors.black),
+            )),
+        body: Column(
+          children: <Widget>[
+            GridView.builder(
+                shrinkWrap: true,
+                itemCount: 9,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3, crossAxisSpacing: 0, mainAxisSpacing: 0),
+                itemBuilder: (BuildContext context, int index) {
+                  return GestureDetector(
+                    onTap: () {
+                      tappedTile(index);
+                    },
+                    child: AnimatedContainer(
+                      decoration: BoxDecoration(
+                        border: Border.all(width: 0.4),
+                        color: tileColors[index],
+                      ),
+                      duration: const Duration(milliseconds: 250),
+                    ),
+                  );
+                }),
+            const SizedBox(height: 16),
+            Visibility(
+              visible: isGameOver,
+              child: RaisedButton(
+                onPressed: () {
+                  resetGame();
+                },
+                child: const Text('Play again!'),
+              ),
+            )
+          ],
+        ));
+  }
+
+
+
 }
