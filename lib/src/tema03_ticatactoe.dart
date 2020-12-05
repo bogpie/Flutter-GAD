@@ -162,8 +162,8 @@ class _HomePageState extends State<HomePage> {
     Alert(
       context: context,
       type: AlertType.info,
-      title: "Tie",
-      desc: "Tied game",
+      title: 'Tie',
+      desc: 'Tied game',
       buttons: [
 
         DialogButton(
