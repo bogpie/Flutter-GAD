@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
 
       Tuple2<int, List<int>> result = findResult();
       winner = result.item1;
-      List <int> combination = result.item2;
+      List<int> combination = result.item2;
       print('winner: $winner');
       if (winner == -1) {
         setState(() {
@@ -92,15 +92,13 @@ class _HomePageState extends State<HomePage> {
       title: 'Tie',
       desc: 'Tied game',
       buttons: [
-
         DialogButton(
             child: const Text(
               'OK',
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
             onPressed: () {
-              setState(() {
-              });
+              setState(() {});
               Navigator.pop(context);
             },
             width: 120)
@@ -182,7 +180,4 @@ class _HomePageState extends State<HomePage> {
           ],
         ));
   }
-
-
-
 }

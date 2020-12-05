@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tema1/src/tema01.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:audioplayer/audioplayer.dart';
 
@@ -21,11 +20,7 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-enum PlayerState { stopped, playing, paused }
-
 class _HomePageState extends State<HomePage> {
-
-
   String tempFileUri = '';
   int currentIndex = -1;
   List<String> tempFileUris = <String>[];
@@ -42,29 +37,24 @@ class _HomePageState extends State<HomePage> {
     'scuzati-ma (franceza)'
   ];
 
-
-  void _playSound(){
+  void _playSound() {
     tempFileUri = tempFileUris[currentIndex];
     player.play(tempFileUri);
   }
 
-  void _loadSound() async{
-
+  void _loadSound() async {
     Directory tempDir = await getTemporaryDirectory();
     ByteData data;
 
-    for (int i=0;i<8;++i) {
+    for (int i = 0; i < 8; ++i) {
       File tempFile = File('${tempDir.path}/$i.mp3');
       String path = 'assets/$i.mp3';
       data = await rootBundle.load(path);
-      await tempFile.writeAsBytes(data.buffer.asUint8List(), flush:true);
+      await tempFile.writeAsBytes(data.buffer.asUint8List(), flush: true);
       tempFileUri = tempFile.uri.toString();
       tempFileUris.add(tempFileUri);
     }
-
-
   }
-
 
   @override
   void initState() {
@@ -73,11 +63,8 @@ class _HomePageState extends State<HomePage> {
     _loadSound();
   }
 
-
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
