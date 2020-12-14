@@ -104,11 +104,15 @@ class _HomePageState extends State<HomePage> {
             ),
             Align(
               alignment: AlignmentDirectional.topCenter,
-              child: FlatButton(
-                child: const Text('Generate'),
+              child: MaterialButton(
+                child: const Text(
+                  'Generate',
+                  style: TextStyle(color: Colors.white),
+                ),
                 onPressed: () {
                   generateMovies();
                 },
+                color: Colors.blue,
               ),
             )
           ],
