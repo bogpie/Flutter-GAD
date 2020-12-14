@@ -61,14 +61,13 @@ class _HomePageState extends State<HomePage> {
             ),
           )
           .toList();
-      if (_moviesBrief.isNotEmpty) {
-        setState(
-          () {
-            _movies.addAll(_moviesBrief);
-          },
-        );
-      }
+      setState(
+        () {
+          _movies.addAll(_moviesBrief);
+        },
+      );
     } else {
+      --_page;
       showDialog<void>(
         context: context,
         builder: (BuildContext context) {
@@ -121,6 +120,9 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
+            const SizedBox(
+              height: 16,
+            ),
             Expanded(
               child: ListView.builder(
                 itemCount: _movies.length + 1,
@@ -150,8 +152,11 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
             ),
+            const SizedBox(
+              height: 16,
+            ),
             Align(
-              alignment: AlignmentDirectional.topCenter,
+              alignment: AlignmentDirectional.center,
               child: MaterialButton(
                 child: const Text(
                   'Create List',
