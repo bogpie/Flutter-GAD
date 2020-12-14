@@ -53,11 +53,11 @@ class _HomePageState extends State<HomePage> {
         )
         .toList();
 
-    setState(() {
-      _movies = _moviesBrief.where((Movie element) => element.rating > _rating).toList();
-    });
-
-    print(_movies);
+    setState(
+      () {
+        _movies = _moviesBrief.where((Movie element) => element.rating > _rating).toList();
+      },
+    );
   }
 
   @override
