@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
   List<String> tempFileUris = <String>[];
   AudioPlayer player = AudioPlayer();
 
-  List<String> phrases = [
+  List<String> phrases = <String>[
     'buna',
     'buna (franceza)',
     'multumesc',
@@ -42,13 +42,13 @@ class _HomePageState extends State<HomePage> {
     player.play(tempFileUri);
   }
 
-  void _loadSound() async {
-    Directory tempDir = await getTemporaryDirectory();
+  Future<void> _loadSound() async {
+    final Directory tempDir = await getTemporaryDirectory();
     ByteData data;
 
     for (int i = 0; i < 8; ++i) {
-      File tempFile = File('${tempDir.path}/$i.mp3');
-      String path = 'assets/$i.mp3';
+      final File tempFile = File('${tempDir.path}/$i.mp3');
+      final String path = 'assets/$i.mp3';
       data = await rootBundle.load(path);
       await tempFile.writeAsBytes(data.buffer.asUint8List(), flush: true);
       tempFileUri = tempFile.uri.toString();
@@ -58,7 +58,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _loadSound();
   }
@@ -66,39 +65,52 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: const Text('Basic Phrases'),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: GridView.builder(
-            shrinkWrap: true,
-            itemCount: 8,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, crossAxisSpacing: 32.0, mainAxisSpacing: 32.0),
-            itemBuilder: (BuildContext context, int index) {
-              return Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(32),
-                  gradient: const LinearGradient(
-                    colors: [Colors.lightBlue, Colors.blue, Colors.lightBlueAccent],
-                    begin: FractionalOffset.centerLeft,
-                    end: FractionalOffset.centerRight,
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text('Basic Phrases'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.builder(
+          shrinkWrap: true,
+          itemCount: 8,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 32.0,
+            mainAxisSpacing: 32.0,
+          ),
+          itemBuilder: (BuildContext context, int index) {
+            return Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(32),
+                gradient: const LinearGradient(
+                  colors: <MaterialColor>[
+                    Colors.lightBlue,
+                    Colors.blue,
+                    Colors.lightBlue,
+                  ],
+                  begin: FractionalOffset.centerLeft,
+                  end: FractionalOffset.centerRight,
+                ),
+              ),
+              child: FlatButton(
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
+                child: Text(
+                  phrases[index],
+                  style: const TextStyle(
+                    color: Colors.white,
                   ),
                 ),
-                child: FlatButton(
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
-                  child: Text(phrases[index], style: const TextStyle(color: Colors.white)),
-                  onPressed: () {
-                    player.stop();
-                    currentIndex = index;
-                    _playSound();
-                  },
-                ),
-              );
-            },
-          ),
-        ));
+                onPressed: () {
+                  player.stop();
+                  currentIndex = index;
+                  _playSound();
+                },
+              ),
+            );
+          },
+        ),
+      ),
+    );
   }
 }

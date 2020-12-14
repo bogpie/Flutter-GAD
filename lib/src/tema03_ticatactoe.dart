@@ -20,12 +20,22 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<MaterialColor> tileColors = List<MaterialColor>(9);
-  List<MaterialColor> playerToColor = [Colors.red, Colors.green];
-  Map<MaterialColor, int> colorToPlayer = {Colors.red: 0, Colors.green: 1};
+  final List<MaterialColor> tileColors = List<MaterialColor>(9);
+  final List<MaterialColor> playerToColor = <MaterialColor>[Colors.red, Colors.green];
+  final Map<MaterialColor, int> colorToPlayer = <MaterialColor, int>{Colors.red: 0, Colors.green: 1};
   int currentPlayer = 0;
   int nrColored = 0;
   bool isGameOver = false;
+  final List<List<int>> combinations = <List<int>>[
+    <int>[0, 1, 2],
+    <int>[3, 4, 5],
+    <int>[6, 7, 8],
+    <int>[0, 3, 6],
+    <int>[1, 4, 7],
+    <int>[2, 5, 8],
+    <int>[0, 4, 8],
+    <int>[2, 4, 6]
+  ];
 
   void tappedTile(int index) {
     if (tileColors[index] != null || isGameOver) {
@@ -40,9 +50,9 @@ class _HomePageState extends State<HomePage> {
       print('Nr Colored $nrColored');
       int winner = -1;
 
-      Tuple2<int, List<int>> result = findResult();
+      final Tuple2<int, List<int>> result = findResult();
       winner = result.item1;
-      List<int> combination = result.item2;
+      final List<int> combination = result.item2;
       print('winner: $winner');
       if (winner == -1) {
         setState(() {
@@ -91,7 +101,7 @@ class _HomePageState extends State<HomePage> {
       type: AlertType.info,
       title: 'Tie',
       desc: 'Tied game',
-      buttons: [
+      buttons: <DialogButton>[
         DialogButton(
             child: const Text(
               'OK',
@@ -108,17 +118,6 @@ class _HomePageState extends State<HomePage> {
   }
 
   Tuple2<int, List<int>> findResult() {
-    final List<List<int>> combinations = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [2, 4, 6]
-    ];
-
     for (final List<int> combination in combinations) {
       if (tileColors[combination[0]] == null ||
           tileColors[combination[1]] == null ||
@@ -133,7 +132,7 @@ class _HomePageState extends State<HomePage> {
         return Tuple2<int, List<int>>(player, combination);
       }
     }
-    return Tuple2<int, List<int>>(-1, null);
+    return const Tuple2<int, List<int>>(-1, null);
   }
 
   @override

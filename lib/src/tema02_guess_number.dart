@@ -93,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                               triedText = '';
                               buttonText = 'Guess';
                             } else if (int.tryParse(guessText) != null) {
-                              int guessNumber = int.parse(guessText);
+                              final int guessNumber = int.parse(guessText);
 
                               print(randomNumber);
                               print(guessNumber);
@@ -106,9 +106,9 @@ class _HomePageState extends State<HomePage> {
                                 Alert(
                                   context: context,
                                   type: AlertType.success,
-                                  title: "You guessed right",
-                                  desc: "It was " + randomNumber.toString(),
-                                  buttons: [
+                                  title: 'You guessed right',
+                                  desc: 'It was ' + randomNumber.toString(),
+                                  buttons: <DialogButton>[
                                     DialogButton(
                                       child: const Text(
                                         'Try Again',
