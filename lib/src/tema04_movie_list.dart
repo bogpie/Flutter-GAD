@@ -35,29 +35,58 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Movie> _movies = <Movie>[];
-  double _rating = 0.0;
+  final List<Movie> _movies = <Movie>[];
+  int _minimumRatingInt = 0;
+  double _sliderValue = 0;
+  int _page = 1;
 
-  Future<void> generateMovies() async {
-    const String _url = 'https://yts.mx/api/v2/list_movies.json';
+  Future<void> generateMovies({bool isLoadMore}) async {
+    if (isLoadMore == false) {
+      _page = 1;
+      _movies.clear();
+    } else {
+      ++_page;
+    }
+    final String _url = 'https://yts.mx/api/v2/list_movies.json?limit=50&minimum_rating=$_minimumRatingInt&page=$_page';
     final Response response = await get(_url);
     final Map<String, dynamic> _mapBody = jsonDecode(response.body);
     final List<dynamic> _moviesDetailed = _mapBody['data']['movies'];
 
-    final List<Movie> _moviesBrief = _moviesDetailed
-        .map(
-          (dynamic item) => Movie(
-            title: item['title'],
-            rating: item['rating'] * 1.0,
-          ),
-        )
-        .toList();
-
-    setState(
-      () {
-        _movies = _moviesBrief.where((Movie element) => element.rating > _rating).toList();
-      },
-    );
+    if (_moviesDetailed != null) {
+      final List<Movie> _moviesBrief = _moviesDetailed
+          .map(
+            (dynamic item) => Movie(
+              title: item['title'],
+              rating: item['rating'] * 1.0,
+            ),
+          )
+          .toList();
+      if (_moviesBrief.isNotEmpty) {
+        setState(
+          () {
+            _movies.addAll(_moviesBrief);
+          },
+        );
+      }
+    } else {
+      showDialog<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text('Info'),
+            content: const Text('No more movies to load!'),
+            actions: <Widget>[
+              FlatButton(
+                child: const Text('OK'),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              )
+            ],
+          );
+        },
+      );
+    }
   }
 
   @override
@@ -72,18 +101,19 @@ class _HomePageState extends State<HomePage> {
               children: <Widget>[
                 Expanded(
                   flex: 2,
-                  child: Text(' Min Rating Level: $_rating'),
+                  child: Text(' Min Rating Level: $_minimumRatingInt'),
                 ),
                 Expanded(
                   flex: 3,
                   child: Slider(
-                    value: _rating,
+                    value: _sliderValue,
                     min: 0.0,
-                    max: 10.0,
+                    max: 9.0,
                     onChanged: (double value) {
                       setState(
                         () {
-                          _rating = double.tryParse(value.toStringAsFixed(1));
+                          _sliderValue = value;
+                          _minimumRatingInt = value.toInt();
                         },
                       );
                     },
@@ -93,12 +123,30 @@ class _HomePageState extends State<HomePage> {
             ),
             Expanded(
               child: ListView.builder(
-                itemCount: _movies.length,
+                itemCount: _movies.length + 1,
                 itemBuilder: (BuildContext context, int index) {
-                  return ListTile(
-                    title: Text(_movies[index].title),
-                    subtitle: Text(_movies[index].rating.toString()),
-                  );
+                  if (_movies.isNotEmpty) {
+                    if (index < _movies.length) {
+                      return ListTile(
+                        title: Text(_movies[index].title),
+                        subtitle: Text(_movies[index].rating.toString()),
+                      );
+                    } else {
+                      return MaterialButton(
+                        onPressed: () {
+                          generateMovies(isLoadMore: true);
+                        },
+                        child: const Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            'Load More',
+                            style: TextStyle(color: Colors.blue),
+                          ),
+                        ),
+                      );
+                    }
+                  }
+                  return null;
                 },
               ),
             ),
@@ -106,11 +154,11 @@ class _HomePageState extends State<HomePage> {
               alignment: AlignmentDirectional.topCenter,
               child: MaterialButton(
                 child: const Text(
-                  'Generate',
+                  'Create List',
                   style: TextStyle(color: Colors.white),
                 ),
                 onPressed: () {
-                  generateMovies();
+                  generateMovies(isLoadMore: false);
                 },
                 color: Colors.blue,
               ),
