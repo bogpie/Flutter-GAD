@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-//import 'package:validators/validators.dart'; //actually isNumeric() doesn't support rational numbers
 
 void main() {
   runApp(Tema01App());

@@ -9,15 +9,15 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  validators: ^2.0.0
+  validators: ^2.0.1
   flutter:
     sdk: flutter
   tuple:
   rflutter_alert: ^1.1.0
-  path_provider: ^1.1.2
-  audioplayer: ^0.5.2
+  path_provider: ^1.6.24
+  audioplayer: ^0.8.1
 
-  cupertino_icons: ^1.0.0
+  cupertino_icons: ^1.0.1+1
   pedantic: ^1.9.2
 
 dev_dependencies:
