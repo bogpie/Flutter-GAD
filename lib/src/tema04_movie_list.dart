@@ -37,14 +37,22 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List<Movie> _movies = <Movie>[];
   int _minimumRatingInt = 0;
+  int _oldMinimumRatingInt = 0;
   double _sliderValue = 0;
   int _page = 1;
 
   Future<void> generateMovies({bool isLoadMore}) async {
     if (isLoadMore == false) {
       _page = 1;
+      _oldMinimumRatingInt = _minimumRatingInt;
       _movies.clear();
     } else {
+      setState(
+        () {
+          _minimumRatingInt = _oldMinimumRatingInt;
+          _sliderValue = _minimumRatingInt * 1.0;
+        },
+      );
       ++_page;
     }
     final String _url = 'https://yts.mx/api/v2/list_movies.json?limit=50&minimum_rating=$_minimumRatingInt&page=$_page';
