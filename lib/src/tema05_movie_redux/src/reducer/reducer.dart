@@ -6,11 +6,10 @@ AppState reducer(AppState state, dynamic action) {
 
   if (action is GetMovies) {
     builder.isLoading = true;
-  } else if (action is GetMoviesSuccessful){
+  } else if (action is GetMoviesSuccessful) {
     builder.movies.addAll(action.movies);
     builder.isLoading = false;
-  }
-  else if(action is GetMoviesError) {
+  } else if (action is GetMoviesError) {
     builder.isLoading = false;
   }
 

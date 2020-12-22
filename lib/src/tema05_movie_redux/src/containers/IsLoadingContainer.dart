@@ -5,7 +5,6 @@ import 'package:meta/meta.dart';
 import 'package:tema1/src/tema05_movie_redux/src/models/app_state.dart';
 
 class IsLoadingContainer extends StatelessWidget {
-
   const IsLoadingContainer({Key key, @required this.builder}) : super(key: key);
   final ViewModelBuilder<bool> builder;
 

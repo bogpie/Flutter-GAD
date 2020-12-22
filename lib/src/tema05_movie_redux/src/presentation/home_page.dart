@@ -2,7 +2,6 @@
 // Lung Razvan <long1eu>
 // on 15/12/2020
 
-
 import 'package:built_collection/built_collection.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +29,8 @@ class HomePage extends StatelessWidget {
               return MoviesContainer(
                 builder: (BuildContext context, BuiltList<Movie> movies) {
                   return GridView.builder(
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
                       mainAxisSpacing: 4.0,
                       crossAxisSpacing: 4.0,
                       crossAxisCount: 3,
