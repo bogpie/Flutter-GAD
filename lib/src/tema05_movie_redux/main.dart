@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(),
       body: Builder(
         builder: (BuildContext context) {
-          if(_isLoading){
+          if (_isLoading) {
             return const Center(
               child: CircularProgressIndicator(),
             );

@@ -39,4 +39,3 @@ abstract class Movie implements Built<Movie, MovieBuilder> {
 
   static Serializer<Movie> get serializer => _$movieSerializer;
 }
-
