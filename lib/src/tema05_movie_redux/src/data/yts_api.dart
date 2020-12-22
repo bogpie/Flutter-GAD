@@ -12,11 +12,10 @@ class YtsApi {
 
   final Client _client;
 
-
   Future<List<Movie>> getMovies() async {
 
     const String url = 'https://yts.mx/api/v2/list_movies.json?limit=50';
-    final Response response = await get(url);
+    final Response response = await _client.get(url);
     final String body = response.body;
     final List<dynamic> list = jsonDecode(body)['data']['movies'];
 
