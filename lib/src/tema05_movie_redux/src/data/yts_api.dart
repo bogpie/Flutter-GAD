@@ -13,7 +13,6 @@ class YtsApi {
   final Client _client;
 
   Future<List<Movie>> getMovies() async {
-
     const String url = 'https://yts.mx/api/v2/list_movies.json?limit=50';
     final Response response = await _client.get(url);
     final String body = response.body;
@@ -25,5 +24,4 @@ class YtsApi {
         .map((dynamic json) => Movie.fromJson(json))
         .toList();
   }
-
 }

@@ -7,7 +7,6 @@ import 'package:tema1/src/tema05_movie_redux/src/models/movie.dart';
 part 'app_state.g.dart';
 
 abstract class AppState implements Built<AppState, AppStateBuilder> {
-
   factory AppState([void Function(AppStateBuilder) updates]) = _$AppState;
 
   factory AppState.initialState() {
@@ -19,5 +18,6 @@ abstract class AppState implements Built<AppState, AppStateBuilder> {
   AppState._();
 
   BuiltList<Movie> get movies;
+
   bool get isLoading;
 }

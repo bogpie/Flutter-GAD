@@ -227,42 +227,60 @@ class MovieBuilder implements Builder<Movie, MovieBuilder> {
   _$Movie _$v;
 
   String _title;
+
   String get title => _$this._title;
+
   set title(String title) => _$this._title = title;
 
   int _year;
+
   int get year => _$this._year;
+
   set year(int year) => _$this._year = year;
 
   num _rating;
+
   num get rating => _$this._rating;
+
   set rating(num rating) => _$this._rating = rating;
 
   int _runtime;
+
   int get runtime => _$this._runtime;
+
   set runtime(int runtime) => _$this._runtime = runtime;
 
   ListBuilder<String> _genres;
+
   ListBuilder<String> get genres =>
       _$this._genres ??= new ListBuilder<String>();
+
   set genres(ListBuilder<String> genres) => _$this._genres = genres;
 
   String _summary;
+
   String get summary => _$this._summary;
+
   set summary(String summary) => _$this._summary = summary;
 
   String _backgroundImage;
+
   String get backgroundImage => _$this._backgroundImage;
+
   set backgroundImage(String backgroundImage) =>
       _$this._backgroundImage = backgroundImage;
 
   String _mediumCoverImage;
+
   String get mediumCoverImage => _$this._mediumCoverImage;
+
   set mediumCoverImage(String mediumCoverImage) =>
       _$this._mediumCoverImage = mediumCoverImage;
 
   String _largeCoverImage;
+
   String get largeCoverImage => _$this._largeCoverImage;
+
   set largeCoverImage(String largeCoverImage) =>
       _$this._largeCoverImage = largeCoverImage;
 

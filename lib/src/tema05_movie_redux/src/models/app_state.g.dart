@@ -57,11 +57,15 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   _$AppState _$v;
 
   ListBuilder<Movie> _movies;
+
   ListBuilder<Movie> get movies => _$this._movies ??= new ListBuilder<Movie>();
+
   set movies(ListBuilder<Movie> movies) => _$this._movies = movies;
 
   bool _isLoading;
+
   bool get isLoading => _$this._isLoading;
+
   set isLoading(bool isLoading) => _$this._isLoading = isLoading;
 
   AppStateBuilder();
