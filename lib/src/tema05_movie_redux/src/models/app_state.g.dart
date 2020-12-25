@@ -12,8 +12,7 @@ class _$AppState extends AppState {
   @override
   final bool isLoading;
 
-  factory _$AppState([void Function(AppStateBuilder) updates]) =>
-      (new AppStateBuilder()..update(updates)).build();
+  factory _$AppState([void Function(AppStateBuilder) updates]) => (new AppStateBuilder()..update(updates)).build();
 
   _$AppState._({this.movies, this.isLoading}) : super._() {
     if (movies == null) {
@@ -25,8 +24,7 @@ class _$AppState extends AppState {
   }
 
   @override
-  AppState rebuild(void Function(AppStateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  AppState rebuild(void Function(AppStateBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   AppStateBuilder toBuilder() => new AppStateBuilder()..replace(this);
@@ -34,9 +32,7 @@ class _$AppState extends AppState {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is AppState &&
-        movies == other.movies &&
-        isLoading == other.isLoading;
+    return other is AppState && movies == other.movies && isLoading == other.isLoading;
   }
 
   @override
@@ -46,10 +42,7 @@ class _$AppState extends AppState {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('AppState')
-          ..add('movies', movies)
-          ..add('isLoading', isLoading))
-        .toString();
+    return (newBuiltValueToStringHelper('AppState')..add('movies', movies)..add('isLoading', isLoading)).toString();
   }
 }
 
@@ -96,16 +89,14 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   _$AppState build() {
     _$AppState _$result;
     try {
-      _$result =
-          _$v ?? new _$AppState._(movies: movies.build(), isLoading: isLoading);
+      _$result = _$v ?? new _$AppState._(movies: movies.build(), isLoading: isLoading);
     } catch (_) {
       String _$failedField;
       try {
         _$failedField = 'movies';
         movies.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'AppState', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError('AppState', _$failedField, e.toString());
       }
       rethrow;
     }
