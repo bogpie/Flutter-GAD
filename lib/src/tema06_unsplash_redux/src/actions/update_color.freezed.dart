@@ -34,9 +34,8 @@ mixin _$UpdateColor {
 
 /// @nodoc
 abstract class $UpdateColorCopyWith<$Res> {
-  factory $UpdateColorCopyWith(
-          UpdateColor value, $Res Function(UpdateColor) then) =
-      _$UpdateColorCopyWithImpl<$Res>;
+  factory $UpdateColorCopyWith(UpdateColor value, $Res Function(UpdateColor) then) = _$UpdateColorCopyWithImpl<$Res>;
+
   $Res call({String color});
 }
 
@@ -45,6 +44,7 @@ class _$UpdateColorCopyWithImpl<$Res> implements $UpdateColorCopyWith<$Res> {
   _$UpdateColorCopyWithImpl(this._value, this._then);
 
   final UpdateColor _value;
+
   // ignore: unused_field
   final $Res Function(UpdateColor) _then;
 
@@ -59,20 +59,17 @@ class _$UpdateColorCopyWithImpl<$Res> implements $UpdateColorCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$UpdateColorCopyWith<$Res>
-    implements $UpdateColorCopyWith<$Res> {
-  factory _$UpdateColorCopyWith(
-          _UpdateColor value, $Res Function(_UpdateColor) then) =
+abstract class _$UpdateColorCopyWith<$Res> implements $UpdateColorCopyWith<$Res> {
+  factory _$UpdateColorCopyWith(_UpdateColor value, $Res Function(_UpdateColor) then) =
       __$UpdateColorCopyWithImpl<$Res>;
+
   @override
   $Res call({String color});
 }
 
 /// @nodoc
-class __$UpdateColorCopyWithImpl<$Res> extends _$UpdateColorCopyWithImpl<$Res>
-    implements _$UpdateColorCopyWith<$Res> {
-  __$UpdateColorCopyWithImpl(
-      _UpdateColor _value, $Res Function(_UpdateColor) _then)
+class __$UpdateColorCopyWithImpl<$Res> extends _$UpdateColorCopyWithImpl<$Res> implements _$UpdateColorCopyWith<$Res> {
+  __$UpdateColorCopyWithImpl(_UpdateColor _value, $Res Function(_UpdateColor) _then)
       : super(_value, (v) => _then(v as _UpdateColor));
 
   @override
@@ -104,17 +101,14 @@ class _$_UpdateColor implements _UpdateColor {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _UpdateColor &&
-            (identical(other.color, color) ||
-                const DeepCollectionEquality().equals(other.color, color)));
+            (identical(other.color, color) || const DeepCollectionEquality().equals(other.color, color)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(color);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(color);
 
   @override
-  _$UpdateColorCopyWith<_UpdateColor> get copyWith =>
-      __$UpdateColorCopyWithImpl<_UpdateColor>(this, _$identity);
+  _$UpdateColorCopyWith<_UpdateColor> get copyWith => __$UpdateColorCopyWithImpl<_UpdateColor>(this, _$identity);
 }
 
 abstract class _UpdateColor implements UpdateColor {
@@ -122,6 +116,7 @@ abstract class _UpdateColor implements UpdateColor {
 
   @override
   String get color;
+
   @override
   _$UpdateColorCopyWith<_UpdateColor> get copyWith;
 }

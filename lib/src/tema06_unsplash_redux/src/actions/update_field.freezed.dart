@@ -34,9 +34,8 @@ mixin _$UpdateField {
 
 /// @nodoc
 abstract class $UpdateFieldCopyWith<$Res> {
-  factory $UpdateFieldCopyWith(
-          UpdateField value, $Res Function(UpdateField) then) =
-      _$UpdateFieldCopyWithImpl<$Res>;
+  factory $UpdateFieldCopyWith(UpdateField value, $Res Function(UpdateField) then) = _$UpdateFieldCopyWithImpl<$Res>;
+
   $Res call({String field});
 }
 
@@ -45,6 +44,7 @@ class _$UpdateFieldCopyWithImpl<$Res> implements $UpdateFieldCopyWith<$Res> {
   _$UpdateFieldCopyWithImpl(this._value, this._then);
 
   final UpdateField _value;
+
   // ignore: unused_field
   final $Res Function(UpdateField) _then;
 
@@ -59,20 +59,17 @@ class _$UpdateFieldCopyWithImpl<$Res> implements $UpdateFieldCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$UpdateFieldCopyWith<$Res>
-    implements $UpdateFieldCopyWith<$Res> {
-  factory _$UpdateFieldCopyWith(
-          _UpdateField value, $Res Function(_UpdateField) then) =
+abstract class _$UpdateFieldCopyWith<$Res> implements $UpdateFieldCopyWith<$Res> {
+  factory _$UpdateFieldCopyWith(_UpdateField value, $Res Function(_UpdateField) then) =
       __$UpdateFieldCopyWithImpl<$Res>;
+
   @override
   $Res call({String field});
 }
 
 /// @nodoc
-class __$UpdateFieldCopyWithImpl<$Res> extends _$UpdateFieldCopyWithImpl<$Res>
-    implements _$UpdateFieldCopyWith<$Res> {
-  __$UpdateFieldCopyWithImpl(
-      _UpdateField _value, $Res Function(_UpdateField) _then)
+class __$UpdateFieldCopyWithImpl<$Res> extends _$UpdateFieldCopyWithImpl<$Res> implements _$UpdateFieldCopyWith<$Res> {
+  __$UpdateFieldCopyWithImpl(_UpdateField _value, $Res Function(_UpdateField) _then)
       : super(_value, (v) => _then(v as _UpdateField));
 
   @override
@@ -104,17 +101,14 @@ class _$_UpdateField implements _UpdateField {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _UpdateField &&
-            (identical(other.field, field) ||
-                const DeepCollectionEquality().equals(other.field, field)));
+            (identical(other.field, field) || const DeepCollectionEquality().equals(other.field, field)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(field);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(field);
 
   @override
-  _$UpdateFieldCopyWith<_UpdateField> get copyWith =>
-      __$UpdateFieldCopyWithImpl<_UpdateField>(this, _$identity);
+  _$UpdateFieldCopyWith<_UpdateField> get copyWith => __$UpdateFieldCopyWithImpl<_UpdateField>(this, _$identity);
 }
 
 abstract class _UpdateField implements UpdateField {
@@ -122,6 +116,7 @@ abstract class _UpdateField implements UpdateField {
 
   @override
   String get field;
+
   @override
   _$UpdateFieldCopyWith<_UpdateField> get copyWith;
 }

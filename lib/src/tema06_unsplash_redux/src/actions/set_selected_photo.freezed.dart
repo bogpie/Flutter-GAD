@@ -34,18 +34,18 @@ mixin _$SetSelectedPhoto {
 
 /// @nodoc
 abstract class $SetSelectedPhotoCopyWith<$Res> {
-  factory $SetSelectedPhotoCopyWith(
-          SetSelectedPhoto value, $Res Function(SetSelectedPhoto) then) =
+  factory $SetSelectedPhotoCopyWith(SetSelectedPhoto value, $Res Function(SetSelectedPhoto) then) =
       _$SetSelectedPhotoCopyWithImpl<$Res>;
+
   $Res call({String photoId});
 }
 
 /// @nodoc
-class _$SetSelectedPhotoCopyWithImpl<$Res>
-    implements $SetSelectedPhotoCopyWith<$Res> {
+class _$SetSelectedPhotoCopyWithImpl<$Res> implements $SetSelectedPhotoCopyWith<$Res> {
   _$SetSelectedPhotoCopyWithImpl(this._value, this._then);
 
   final SetSelectedPhoto _value;
+
   // ignore: unused_field
   final $Res Function(SetSelectedPhoto) _then;
 
@@ -60,21 +60,18 @@ class _$SetSelectedPhotoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $SetSelectedPhoto$CopyWith<$Res>
-    implements $SetSelectedPhotoCopyWith<$Res> {
-  factory $SetSelectedPhoto$CopyWith(
-          SetSelectedPhoto$ value, $Res Function(SetSelectedPhoto$) then) =
+abstract class $SetSelectedPhoto$CopyWith<$Res> implements $SetSelectedPhotoCopyWith<$Res> {
+  factory $SetSelectedPhoto$CopyWith(SetSelectedPhoto$ value, $Res Function(SetSelectedPhoto$) then) =
       _$SetSelectedPhoto$CopyWithImpl<$Res>;
+
   @override
   $Res call({String photoId});
 }
 
 /// @nodoc
-class _$SetSelectedPhoto$CopyWithImpl<$Res>
-    extends _$SetSelectedPhotoCopyWithImpl<$Res>
+class _$SetSelectedPhoto$CopyWithImpl<$Res> extends _$SetSelectedPhotoCopyWithImpl<$Res>
     implements $SetSelectedPhoto$CopyWith<$Res> {
-  _$SetSelectedPhoto$CopyWithImpl(
-      SetSelectedPhoto$ _value, $Res Function(SetSelectedPhoto$) _then)
+  _$SetSelectedPhoto$CopyWithImpl(SetSelectedPhoto$ _value, $Res Function(SetSelectedPhoto$) _then)
       : super(_value, (v) => _then(v as SetSelectedPhoto$));
 
   @override
@@ -106,13 +103,11 @@ class _$SetSelectedPhoto$ implements SetSelectedPhoto$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is SetSelectedPhoto$ &&
-            (identical(other.photoId, photoId) ||
-                const DeepCollectionEquality().equals(other.photoId, photoId)));
+            (identical(other.photoId, photoId) || const DeepCollectionEquality().equals(other.photoId, photoId)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(photoId);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(photoId);
 
   @override
   $SetSelectedPhoto$CopyWith<SetSelectedPhoto$> get copyWith =>
@@ -124,6 +119,7 @@ abstract class SetSelectedPhoto$ implements SetSelectedPhoto {
 
   @override
   String get photoId;
+
   @override
   $SetSelectedPhoto$CopyWith<SetSelectedPhoto$> get copyWith;
 }
