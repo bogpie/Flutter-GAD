@@ -122,7 +122,7 @@ class HomePage extends StatelessWidget {
                               child: CircularProgressIndicator(),
                             );
                           }
-                          if(StoreProvider.of<AppState>(context).state.photos.isEmpty) {
+                          if (StoreProvider.of<AppState>(context).state.photos.isEmpty) {
                             return const Center(
                               child: Text('Enter another query'),
                             );
