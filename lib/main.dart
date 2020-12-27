@@ -1,4 +1,4 @@
-import 'src/tema05_movie_redux/main.dart' as app;
+import 'src/tema06_movie_redux/main.dart' as app;
 
 void main() {
   app.main();
