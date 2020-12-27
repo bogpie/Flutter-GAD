@@ -24,7 +24,7 @@ class UnsplashApi {
         'page': '$page',
         'query': query,
         'order_by': orderBy,
-        if(color!=null && color!='any') 'color' : color,
+        if (color != null && color != 'any') 'color': color,
       },
     );
 
