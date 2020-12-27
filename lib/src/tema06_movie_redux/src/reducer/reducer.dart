@@ -41,5 +41,6 @@ AppState reducer(AppState state, dynamic action) {
   print('Old state: $state \n\n');
   final AppState newState = builder.build();
   print('New state: $newState \n\n');
+  
   return newState;
 }

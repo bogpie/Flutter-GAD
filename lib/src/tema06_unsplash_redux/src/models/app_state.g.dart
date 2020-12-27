@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'app_state.dart';
+part of app_state;
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -8,37 +8,43 @@ part of 'app_state.dart';
 
 class _$AppState extends AppState {
   @override
-  final BuiltList<Movie> movies;
+  final BuiltList<Photo> photos;
   @override
-  final int nextPage;
+  final int page;
   @override
-  final String quality;
+  final String query;
   @override
-  final String genre;
+  final String field;
   @override
   final String orderBy;
   @override
-  final bool isLoading;
+  final String color;
   @override
-  final int selectedMovie;
+  final String selectedPhoto;
+  @override
+  final bool isLoading;
 
   factory _$AppState([void Function(AppStateBuilder) updates]) =>
       (new AppStateBuilder()..update(updates)).build();
 
   _$AppState._(
-      {this.movies,
-      this.nextPage,
-      this.quality,
-      this.genre,
+      {this.photos,
+      this.page,
+      this.query,
+      this.field,
       this.orderBy,
-      this.isLoading,
-      this.selectedMovie})
+      this.color,
+      this.selectedPhoto,
+      this.isLoading})
       : super._() {
-    if (movies == null) {
-      throw new BuiltValueNullFieldError('AppState', 'movies');
+    if (photos == null) {
+      throw new BuiltValueNullFieldError('AppState', 'photos');
     }
-    if (nextPage == null) {
-      throw new BuiltValueNullFieldError('AppState', 'nextPage');
+    if (page == null) {
+      throw new BuiltValueNullFieldError('AppState', 'page');
+    }
+    if (field == null) {
+      throw new BuiltValueNullFieldError('AppState', 'field');
     }
     if (orderBy == null) {
       throw new BuiltValueNullFieldError('AppState', 'orderBy');
@@ -59,13 +65,14 @@ class _$AppState extends AppState {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AppState &&
-        movies == other.movies &&
-        nextPage == other.nextPage &&
-        quality == other.quality &&
-        genre == other.genre &&
+        photos == other.photos &&
+        page == other.page &&
+        query == other.query &&
+        field == other.field &&
         orderBy == other.orderBy &&
-        isLoading == other.isLoading &&
-        selectedMovie == other.selectedMovie;
+        color == other.color &&
+        selectedPhoto == other.selectedPhoto &&
+        isLoading == other.isLoading;
   }
 
   @override
@@ -74,24 +81,27 @@ class _$AppState extends AppState {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, movies.hashCode), nextPage.hashCode),
-                        quality.hashCode),
-                    genre.hashCode),
-                orderBy.hashCode),
-            isLoading.hashCode),
-        selectedMovie.hashCode));
+                    $jc(
+                        $jc($jc($jc(0, photos.hashCode), page.hashCode),
+                            query.hashCode),
+                        field.hashCode),
+                    orderBy.hashCode),
+                color.hashCode),
+            selectedPhoto.hashCode),
+        isLoading.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('AppState')
-          ..add('movies', movies)
-          ..add('nextPage', nextPage)
-          ..add('quality', quality)
-          ..add('genre', genre)
+          ..add('photos', photos)
+          ..add('page', page)
+          ..add('query', query)
+          ..add('field', field)
           ..add('orderBy', orderBy)
-          ..add('isLoading', isLoading)
-          ..add('selectedMovie', selectedMovie))
+          ..add('color', color)
+          ..add('selectedPhoto', selectedPhoto)
+          ..add('isLoading', isLoading))
         .toString();
   }
 }
@@ -99,45 +109,51 @@ class _$AppState extends AppState {
 class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   _$AppState _$v;
 
-  ListBuilder<Movie> _movies;
-  ListBuilder<Movie> get movies => _$this._movies ??= new ListBuilder<Movie>();
-  set movies(ListBuilder<Movie> movies) => _$this._movies = movies;
+  ListBuilder<Photo> _photos;
+  ListBuilder<Photo> get photos => _$this._photos ??= new ListBuilder<Photo>();
+  set photos(ListBuilder<Photo> photos) => _$this._photos = photos;
 
-  int _nextPage;
-  int get nextPage => _$this._nextPage;
-  set nextPage(int nextPage) => _$this._nextPage = nextPage;
+  int _page;
+  int get page => _$this._page;
+  set page(int page) => _$this._page = page;
 
-  String _quality;
-  String get quality => _$this._quality;
-  set quality(String quality) => _$this._quality = quality;
+  String _query;
+  String get query => _$this._query;
+  set query(String query) => _$this._query = query;
 
-  String _genre;
-  String get genre => _$this._genre;
-  set genre(String genre) => _$this._genre = genre;
+  String _field;
+  String get field => _$this._field;
+  set field(String field) => _$this._field = field;
 
   String _orderBy;
   String get orderBy => _$this._orderBy;
   set orderBy(String orderBy) => _$this._orderBy = orderBy;
 
+  String _color;
+  String get color => _$this._color;
+  set color(String color) => _$this._color = color;
+
+  String _selectedPhoto;
+  String get selectedPhoto => _$this._selectedPhoto;
+  set selectedPhoto(String selectedPhoto) =>
+      _$this._selectedPhoto = selectedPhoto;
+
   bool _isLoading;
   bool get isLoading => _$this._isLoading;
   set isLoading(bool isLoading) => _$this._isLoading = isLoading;
-
-  int _selectedMovie;
-  int get selectedMovie => _$this._selectedMovie;
-  set selectedMovie(int selectedMovie) => _$this._selectedMovie = selectedMovie;
 
   AppStateBuilder();
 
   AppStateBuilder get _$this {
     if (_$v != null) {
-      _movies = _$v.movies?.toBuilder();
-      _nextPage = _$v.nextPage;
-      _quality = _$v.quality;
-      _genre = _$v.genre;
+      _photos = _$v.photos?.toBuilder();
+      _page = _$v.page;
+      _query = _$v.query;
+      _field = _$v.field;
       _orderBy = _$v.orderBy;
+      _color = _$v.color;
+      _selectedPhoto = _$v.selectedPhoto;
       _isLoading = _$v.isLoading;
-      _selectedMovie = _$v.selectedMovie;
       _$v = null;
     }
     return this;
@@ -162,18 +178,19 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
     try {
       _$result = _$v ??
           new _$AppState._(
-              movies: movies.build(),
-              nextPage: nextPage,
-              quality: quality,
-              genre: genre,
+              photos: photos.build(),
+              page: page,
+              query: query,
+              field: field,
               orderBy: orderBy,
-              isLoading: isLoading,
-              selectedMovie: selectedMovie);
+              color: color,
+              selectedPhoto: selectedPhoto,
+              isLoading: isLoading);
     } catch (_) {
       String _$failedField;
       try {
-        _$failedField = 'movies';
-        movies.build();
+        _$failedField = 'photos';
+        photos.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'AppState', _$failedField, e.toString());

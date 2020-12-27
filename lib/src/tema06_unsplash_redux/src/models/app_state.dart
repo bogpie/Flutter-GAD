@@ -1,7 +1,8 @@
+library app_state;
 
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
-import 'package:tema1/src/tema06_movie_redux/src/models/movie.dart';
+import 'package:tema1/src/tema06_unsplash_redux/src/models/photo.dart';
 
 part 'app_state.g.dart';
 
@@ -12,27 +13,31 @@ abstract class AppState implements Built<AppState, AppStateBuilder> {
     final AppStateBuilder builder = AppStateBuilder();
     builder
       ..isLoading = true
-      ..nextPage = 1
-      ..orderBy = 'desc';
+      ..page = 1
+      ..field = ''
+      ..orderBy = 'relevant';
     return builder.build();
   }
 
   AppState._();
 
-  BuiltList<Movie> get movies;
+  BuiltList<Photo> get photos;
 
-  int get nextPage;
-
-  @nullable
-  String get quality;
+  int get page;
 
   @nullable
-  String get genre;
+  String get query;
 
+  String get field;
+
+  @BuiltValueField(wireName: 'order_by')
   String get orderBy;
 
-  bool get isLoading;
+  @nullable
+  String get color;
 
   @nullable
-  int get selectedMovie;
+  String get selectedPhoto;
+
+  bool get isLoading;
 }

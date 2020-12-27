@@ -157,9 +157,13 @@ class HomePage extends StatelessWidget {
                                         },
                                         child: GridTile(
                                           child: Image.network(movie.mediumCoverImage),
-                                          footer: GridTileBar(
-                                            title: Text(movie.title),
-                                            subtitle: Text(movie.genres.join('; ')),
+                                          footer: Opacity(
+                                            opacity: 0.75,
+                                            child: GridTileBar(
+                                              title: Text(movie.title),
+                                              subtitle: Text(movie.genres.join('; ')),
+                                              backgroundColor: Colors.black,
+                                            ),
                                           ),
                                         ),
                                       );
@@ -168,9 +172,7 @@ class HomePage extends StatelessWidget {
                                 ),
                                 FlatButton(
                                   child: const Text('Load More'),
-                                  onPressed: () {
-                                    StoreProvider.of<AppState>(context).dispatch(const GetMovies());
-                                  },
+                                  onPressed: () => StoreProvider.of<AppState>(context).dispatch(const GetMovies()),
                                 )
                               ],
                             );

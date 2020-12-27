@@ -1,5 +1,3 @@
-// business logic
-
 import 'dart:convert';
 import 'package:http/http.dart';
 import 'package:meta/meta.dart';
