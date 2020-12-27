@@ -11,7 +11,10 @@ class PhotoDetail extends StatelessWidget {
       //
       builder: (BuildContext context, Photo photo) {
         return Scaffold(
-          appBar: AppBar(title: Text(photo.altDescription)),
+          appBar: AppBar(
+            title: Text(photo.altDescription),
+            backgroundColor: Colors.red,
+          ),
           body: Image.network(photo.urls.full),
         );
       },
