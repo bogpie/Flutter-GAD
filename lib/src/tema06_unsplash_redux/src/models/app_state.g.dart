@@ -24,18 +24,10 @@ class _$AppState extends AppState {
   @override
   final bool isLoading;
 
-  factory _$AppState([void Function(AppStateBuilder) updates]) =>
-      (new AppStateBuilder()..update(updates)).build();
+  factory _$AppState([void Function(AppStateBuilder) updates]) => (new AppStateBuilder()..update(updates)).build();
 
   _$AppState._(
-      {this.photos,
-      this.page,
-      this.query,
-      this.field,
-      this.orderBy,
-      this.color,
-      this.selectedPhoto,
-      this.isLoading})
+      {this.photos, this.page, this.query, this.field, this.orderBy, this.color, this.selectedPhoto, this.isLoading})
       : super._() {
     if (photos == null) {
       throw new BuiltValueNullFieldError('AppState', 'photos');
@@ -55,8 +47,7 @@ class _$AppState extends AppState {
   }
 
   @override
-  AppState rebuild(void Function(AppStateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  AppState rebuild(void Function(AppStateBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   AppStateBuilder toBuilder() => new AppStateBuilder()..replace(this);
@@ -80,11 +71,7 @@ class _$AppState extends AppState {
     return $jf($jc(
         $jc(
             $jc(
-                $jc(
-                    $jc(
-                        $jc($jc($jc(0, photos.hashCode), page.hashCode),
-                            query.hashCode),
-                        field.hashCode),
+                $jc($jc($jc($jc($jc(0, photos.hashCode), page.hashCode), query.hashCode), field.hashCode),
                     orderBy.hashCode),
                 color.hashCode),
             selectedPhoto.hashCode),
@@ -110,36 +97,51 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   _$AppState _$v;
 
   ListBuilder<Photo> _photos;
+
   ListBuilder<Photo> get photos => _$this._photos ??= new ListBuilder<Photo>();
+
   set photos(ListBuilder<Photo> photos) => _$this._photos = photos;
 
   int _page;
+
   int get page => _$this._page;
+
   set page(int page) => _$this._page = page;
 
   String _query;
+
   String get query => _$this._query;
+
   set query(String query) => _$this._query = query;
 
   String _field;
+
   String get field => _$this._field;
+
   set field(String field) => _$this._field = field;
 
   String _orderBy;
+
   String get orderBy => _$this._orderBy;
+
   set orderBy(String orderBy) => _$this._orderBy = orderBy;
 
   String _color;
+
   String get color => _$this._color;
+
   set color(String color) => _$this._color = color;
 
   String _selectedPhoto;
+
   String get selectedPhoto => _$this._selectedPhoto;
-  set selectedPhoto(String selectedPhoto) =>
-      _$this._selectedPhoto = selectedPhoto;
+
+  set selectedPhoto(String selectedPhoto) => _$this._selectedPhoto = selectedPhoto;
 
   bool _isLoading;
+
   bool get isLoading => _$this._isLoading;
+
   set isLoading(bool isLoading) => _$this._isLoading = isLoading;
 
   AppStateBuilder();
@@ -192,8 +194,7 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
         _$failedField = 'photos';
         photos.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'AppState', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError('AppState', _$failedField, e.toString());
       }
       rethrow;
     }

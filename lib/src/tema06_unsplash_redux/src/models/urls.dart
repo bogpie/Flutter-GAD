@@ -5,8 +5,9 @@ import 'package:built_value/serializer.dart';
 
 part 'urls.g.dart';
 
-abstract class Urls implements Built<Urls,UrlsBuilder> {
+abstract class Urls implements Built<Urls, UrlsBuilder> {
   factory Urls([void Function(UrlsBuilder) updates]) = _$Urls;
+
   Urls._();
 
   String get raw;

@@ -37,11 +37,9 @@ AppState reducer(AppState state, dynamic action) {
       ..photos.clear()
       ..page = 1
       ..color = action.color;
-
   } else if (action is SetSelectedPhoto) {
     builder.selectedPhoto = action.photoId;
-  }
-  else {
+  } else {
     builder.isLoading = false;
     print('Undefined action! \n\n');
   }

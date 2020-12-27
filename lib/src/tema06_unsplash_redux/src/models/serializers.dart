@@ -7,9 +7,7 @@ import 'package:tema1/src/tema06_unsplash_redux/src/models/urls.dart';
 
 part 'serializers.g.dart';
 
-@SerializersFor(<Type>[
-  Photo,Urls
-])
+@SerializersFor(<Type>[Photo, Urls])
 Serializers serializers = (_$serializers.toBuilder() //
       ..addPlugin(StandardJsonPlugin()))
     .build();
