@@ -22,17 +22,9 @@ class _$AppState extends AppState {
   @override
   final int selectedMovie;
 
-  factory _$AppState([void Function(AppStateBuilder) updates]) =>
-      (new AppStateBuilder()..update(updates)).build();
+  factory _$AppState([void Function(AppStateBuilder) updates]) => (new AppStateBuilder()..update(updates)).build();
 
-  _$AppState._(
-      {this.movies,
-      this.nextPage,
-      this.quality,
-      this.genre,
-      this.orderBy,
-      this.isLoading,
-      this.selectedMovie})
+  _$AppState._({this.movies, this.nextPage, this.quality, this.genre, this.orderBy, this.isLoading, this.selectedMovie})
       : super._() {
     if (movies == null) {
       throw new BuiltValueNullFieldError('AppState', 'movies');
@@ -49,8 +41,7 @@ class _$AppState extends AppState {
   }
 
   @override
-  AppState rebuild(void Function(AppStateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  AppState rebuild(void Function(AppStateBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   AppStateBuilder toBuilder() => new AppStateBuilder()..replace(this);
@@ -72,11 +63,7 @@ class _$AppState extends AppState {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc(
-                $jc(
-                    $jc($jc($jc(0, movies.hashCode), nextPage.hashCode),
-                        quality.hashCode),
-                    genre.hashCode),
+            $jc($jc($jc($jc($jc(0, movies.hashCode), nextPage.hashCode), quality.hashCode), genre.hashCode),
                 orderBy.hashCode),
             isLoading.hashCode),
         selectedMovie.hashCode));
@@ -100,31 +87,45 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   _$AppState _$v;
 
   ListBuilder<Movie> _movies;
+
   ListBuilder<Movie> get movies => _$this._movies ??= new ListBuilder<Movie>();
+
   set movies(ListBuilder<Movie> movies) => _$this._movies = movies;
 
   int _nextPage;
+
   int get nextPage => _$this._nextPage;
+
   set nextPage(int nextPage) => _$this._nextPage = nextPage;
 
   String _quality;
+
   String get quality => _$this._quality;
+
   set quality(String quality) => _$this._quality = quality;
 
   String _genre;
+
   String get genre => _$this._genre;
+
   set genre(String genre) => _$this._genre = genre;
 
   String _orderBy;
+
   String get orderBy => _$this._orderBy;
+
   set orderBy(String orderBy) => _$this._orderBy = orderBy;
 
   bool _isLoading;
+
   bool get isLoading => _$this._isLoading;
+
   set isLoading(bool isLoading) => _$this._isLoading = isLoading;
 
   int _selectedMovie;
+
   int get selectedMovie => _$this._selectedMovie;
+
   set selectedMovie(int selectedMovie) => _$this._selectedMovie = selectedMovie;
 
   AppStateBuilder();
@@ -175,8 +176,7 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
         _$failedField = 'movies';
         movies.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'AppState', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError('AppState', _$failedField, e.toString());
       }
       rethrow;
     }

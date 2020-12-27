@@ -4,7 +4,7 @@ import 'package:redux/redux.dart';
 import 'package:meta/meta.dart';
 import 'package:tema1/src/tema06_movie_redux/src/models/app_state.dart';
 
-class OrderByContainer  extends StatelessWidget {
+class OrderByContainer extends StatelessWidget {
   const OrderByContainer({Key key, @required this.builder}) : super(key: key);
   final ViewModelBuilder<String> builder;
 

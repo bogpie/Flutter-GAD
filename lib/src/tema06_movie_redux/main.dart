@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
     return StoreProvider<AppState>(
       store: store,
       child: MaterialApp(
-        home: HomePage(),
+        home: const HomePage(),
         routes: <String, WidgetBuilder>{
           '/movieDetail': (BuildContext context) => const MovieDetail(),
         },

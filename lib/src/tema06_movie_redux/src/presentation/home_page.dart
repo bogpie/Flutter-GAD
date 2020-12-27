@@ -46,10 +46,10 @@ class HomePage extends StatelessWidget {
                     builder: (BuildContext context, String orderBy) {
                       return IconButton(
                         icon: Icon(orderBy == 'desc' ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down),
-                        onPressed: (){
+                        onPressed: () {
                           StoreProvider.of<AppState>(context)
-                              ..dispatch(UpdateOrderBy(orderBy=='desc' ? 'asc' : 'desc'))
-                              ..dispatch(const GetMovies());
+                            ..dispatch(UpdateOrderBy(orderBy == 'desc' ? 'asc' : 'desc'))
+                            ..dispatch(const GetMovies());
                         },
                       );
                     },
@@ -151,7 +151,7 @@ class HomePage extends StatelessWidget {
                                       final Movie movie = movies[index];
 
                                       return InkWell(
-                                        onTap: () async{
+                                        onTap: () async {
                                           StoreProvider.of<AppState>(context).dispatch(SetSelectedMovie(movie.id));
                                           Navigator.pushNamed(context, '/movieDetail');
                                         },

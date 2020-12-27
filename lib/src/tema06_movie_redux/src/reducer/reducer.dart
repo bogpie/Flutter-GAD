@@ -34,7 +34,7 @@ AppState reducer(AppState state, dynamic action) {
       ..movies.clear()
       ..nextPage = 1
       ..orderBy = action.orderBy;
-  } else if (action is SetSelectedMovie){
+  } else if (action is SetSelectedMovie) {
     builder.selectedMovie = action.movieId;
   }
 
