@@ -34,18 +34,18 @@ mixin _$UpdateOrderBy {
 
 /// @nodoc
 abstract class $UpdateOrderByCopyWith<$Res> {
-  factory $UpdateOrderByCopyWith(
-          UpdateOrderBy value, $Res Function(UpdateOrderBy) then) =
+  factory $UpdateOrderByCopyWith(UpdateOrderBy value, $Res Function(UpdateOrderBy) then) =
       _$UpdateOrderByCopyWithImpl<$Res>;
+
   $Res call({String orderBy});
 }
 
 /// @nodoc
-class _$UpdateOrderByCopyWithImpl<$Res>
-    implements $UpdateOrderByCopyWith<$Res> {
+class _$UpdateOrderByCopyWithImpl<$Res> implements $UpdateOrderByCopyWith<$Res> {
   _$UpdateOrderByCopyWithImpl(this._value, this._then);
 
   final UpdateOrderBy _value;
+
   // ignore: unused_field
   final $Res Function(UpdateOrderBy) _then;
 
@@ -60,21 +60,18 @@ class _$UpdateOrderByCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$UpdateOrderByCopyWith<$Res>
-    implements $UpdateOrderByCopyWith<$Res> {
-  factory _$UpdateOrderByCopyWith(
-          _UpdateOrderBy value, $Res Function(_UpdateOrderBy) then) =
+abstract class _$UpdateOrderByCopyWith<$Res> implements $UpdateOrderByCopyWith<$Res> {
+  factory _$UpdateOrderByCopyWith(_UpdateOrderBy value, $Res Function(_UpdateOrderBy) then) =
       __$UpdateOrderByCopyWithImpl<$Res>;
+
   @override
   $Res call({String orderBy});
 }
 
 /// @nodoc
-class __$UpdateOrderByCopyWithImpl<$Res>
-    extends _$UpdateOrderByCopyWithImpl<$Res>
+class __$UpdateOrderByCopyWithImpl<$Res> extends _$UpdateOrderByCopyWithImpl<$Res>
     implements _$UpdateOrderByCopyWith<$Res> {
-  __$UpdateOrderByCopyWithImpl(
-      _UpdateOrderBy _value, $Res Function(_UpdateOrderBy) _then)
+  __$UpdateOrderByCopyWithImpl(_UpdateOrderBy _value, $Res Function(_UpdateOrderBy) _then)
       : super(_value, (v) => _then(v as _UpdateOrderBy));
 
   @override
@@ -106,13 +103,11 @@ class _$_UpdateOrderBy implements _UpdateOrderBy {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _UpdateOrderBy &&
-            (identical(other.orderBy, orderBy) ||
-                const DeepCollectionEquality().equals(other.orderBy, orderBy)));
+            (identical(other.orderBy, orderBy) || const DeepCollectionEquality().equals(other.orderBy, orderBy)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(orderBy);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(orderBy);
 
   @override
   _$UpdateOrderByCopyWith<_UpdateOrderBy> get copyWith =>
@@ -124,6 +119,7 @@ abstract class _UpdateOrderBy implements UpdateOrderBy {
 
   @override
   String get orderBy;
+
   @override
   _$UpdateOrderByCopyWith<_UpdateOrderBy> get copyWith;
 }
