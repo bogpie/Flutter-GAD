@@ -15,18 +15,22 @@ class _$UrlsSerializer implements StructuredSerializer<Urls> {
   final String wireName = 'Urls';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Urls object, {FullType specifiedType = FullType.unspecified}) {
+  Iterable<Object> serialize(Serializers serializers, Urls object,
+      {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'raw',
       serializers.serialize(object.raw, specifiedType: const FullType(String)),
       'full',
       serializers.serialize(object.full, specifiedType: const FullType(String)),
       'regular',
-      serializers.serialize(object.regular, specifiedType: const FullType(String)),
+      serializers.serialize(object.regular,
+          specifiedType: const FullType(String)),
       'small',
-      serializers.serialize(object.small, specifiedType: const FullType(String)),
+      serializers.serialize(object.small,
+          specifiedType: const FullType(String)),
       'thumb',
-      serializers.serialize(object.thumb, specifiedType: const FullType(String)),
+      serializers.serialize(object.thumb,
+          specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -44,19 +48,24 @@ class _$UrlsSerializer implements StructuredSerializer<Urls> {
       final dynamic value = iterator.current;
       switch (key) {
         case 'raw':
-          result.raw = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.raw = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           break;
         case 'full':
-          result.full = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.full = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           break;
         case 'regular':
-          result.regular = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.regular = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           break;
         case 'small':
-          result.small = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.small = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           break;
         case 'thumb':
-          result.thumb = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.thumb = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           break;
       }
     }
@@ -77,9 +86,11 @@ class _$Urls extends Urls {
   @override
   final String thumb;
 
-  factory _$Urls([void Function(UrlsBuilder) updates]) => (new UrlsBuilder()..update(updates)).build();
+  factory _$Urls([void Function(UrlsBuilder) updates]) =>
+      (new UrlsBuilder()..update(updates)).build();
 
-  _$Urls._({this.raw, this.full, this.regular, this.small, this.thumb}) : super._() {
+  _$Urls._({this.raw, this.full, this.regular, this.small, this.thumb})
+      : super._() {
     if (raw == null) {
       throw new BuiltValueNullFieldError('Urls', 'raw');
     }
@@ -98,7 +109,8 @@ class _$Urls extends Urls {
   }
 
   @override
-  Urls rebuild(void Function(UrlsBuilder) updates) => (toBuilder()..update(updates)).build();
+  Urls rebuild(void Function(UrlsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
 
   @override
   UrlsBuilder toBuilder() => new UrlsBuilder()..replace(this);
@@ -116,8 +128,10 @@ class _$Urls extends Urls {
 
   @override
   int get hashCode {
-    return $jf(
-        $jc($jc($jc($jc($jc(0, raw.hashCode), full.hashCode), regular.hashCode), small.hashCode), thumb.hashCode));
+    return $jf($jc(
+        $jc($jc($jc($jc(0, raw.hashCode), full.hashCode), regular.hashCode),
+            small.hashCode),
+        thumb.hashCode));
   }
 
   @override
@@ -136,33 +150,23 @@ class UrlsBuilder implements Builder<Urls, UrlsBuilder> {
   _$Urls _$v;
 
   String _raw;
-
   String get raw => _$this._raw;
-
   set raw(String raw) => _$this._raw = raw;
 
   String _full;
-
   String get full => _$this._full;
-
   set full(String full) => _$this._full = full;
 
   String _regular;
-
   String get regular => _$this._regular;
-
   set regular(String regular) => _$this._regular = regular;
 
   String _small;
-
   String get small => _$this._small;
-
   set small(String small) => _$this._small = small;
 
   String _thumb;
-
   String get thumb => _$this._thumb;
-
   set thumb(String thumb) => _$this._thumb = thumb;
 
   UrlsBuilder();
@@ -194,7 +198,9 @@ class UrlsBuilder implements Builder<Urls, UrlsBuilder> {
 
   @override
   _$Urls build() {
-    final _$result = _$v ?? new _$Urls._(raw: raw, full: full, regular: regular, small: small, thumb: thumb);
+    final _$result = _$v ??
+        new _$Urls._(
+            raw: raw, full: full, regular: regular, small: small, thumb: thumb);
     replace(_$result);
     return _$result;
   }

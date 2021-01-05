@@ -1,4 +1,4 @@
-import 'src/tema06_unsplash_redux/main.dart' as app;
+import 'src/tema07_unsplash_redux/main.dart' as app;
 
 void main() {
   app.main();

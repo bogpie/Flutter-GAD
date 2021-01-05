@@ -34,8 +34,9 @@ mixin _$UpdateQuery {
 
 /// @nodoc
 abstract class $UpdateQueryCopyWith<$Res> {
-  factory $UpdateQueryCopyWith(UpdateQuery value, $Res Function(UpdateQuery) then) = _$UpdateQueryCopyWithImpl<$Res>;
-
+  factory $UpdateQueryCopyWith(
+          UpdateQuery value, $Res Function(UpdateQuery) then) =
+      _$UpdateQueryCopyWithImpl<$Res>;
   $Res call({String query});
 }
 
@@ -44,7 +45,6 @@ class _$UpdateQueryCopyWithImpl<$Res> implements $UpdateQueryCopyWith<$Res> {
   _$UpdateQueryCopyWithImpl(this._value, this._then);
 
   final UpdateQuery _value;
-
   // ignore: unused_field
   final $Res Function(UpdateQuery) _then;
 
@@ -59,17 +59,20 @@ class _$UpdateQueryCopyWithImpl<$Res> implements $UpdateQueryCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$UpdateQueryCopyWith<$Res> implements $UpdateQueryCopyWith<$Res> {
-  factory _$UpdateQueryCopyWith(_UpdateQuery value, $Res Function(_UpdateQuery) then) =
+abstract class _$UpdateQueryCopyWith<$Res>
+    implements $UpdateQueryCopyWith<$Res> {
+  factory _$UpdateQueryCopyWith(
+          _UpdateQuery value, $Res Function(_UpdateQuery) then) =
       __$UpdateQueryCopyWithImpl<$Res>;
-
   @override
   $Res call({String query});
 }
 
 /// @nodoc
-class __$UpdateQueryCopyWithImpl<$Res> extends _$UpdateQueryCopyWithImpl<$Res> implements _$UpdateQueryCopyWith<$Res> {
-  __$UpdateQueryCopyWithImpl(_UpdateQuery _value, $Res Function(_UpdateQuery) _then)
+class __$UpdateQueryCopyWithImpl<$Res> extends _$UpdateQueryCopyWithImpl<$Res>
+    implements _$UpdateQueryCopyWith<$Res> {
+  __$UpdateQueryCopyWithImpl(
+      _UpdateQuery _value, $Res Function(_UpdateQuery) _then)
       : super(_value, (v) => _then(v as _UpdateQuery));
 
   @override
@@ -101,14 +104,17 @@ class _$_UpdateQuery implements _UpdateQuery {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _UpdateQuery &&
-            (identical(other.query, query) || const DeepCollectionEquality().equals(other.query, query)));
+            (identical(other.query, query) ||
+                const DeepCollectionEquality().equals(other.query, query)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(query);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(query);
 
   @override
-  _$UpdateQueryCopyWith<_UpdateQuery> get copyWith => __$UpdateQueryCopyWithImpl<_UpdateQuery>(this, _$identity);
+  _$UpdateQueryCopyWith<_UpdateQuery> get copyWith =>
+      __$UpdateQueryCopyWithImpl<_UpdateQuery>(this, _$identity);
 }
 
 abstract class _UpdateQuery implements UpdateQuery {
@@ -116,7 +122,6 @@ abstract class _UpdateQuery implements UpdateQuery {
 
   @override
   String get query;
-
   @override
   _$UpdateQueryCopyWith<_UpdateQuery> get copyWith;
 }

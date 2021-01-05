@@ -2,19 +2,9 @@ import 'package:built_collection/built_collection.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:tema1/src/tema06_unsplash_redux/src/actions/update_order_by.dart';
-import 'package:tema1/src/tema06_unsplash_redux/src/actions/get_photos.dart';
-import 'package:tema1/src/tema06_unsplash_redux/src/actions/set_selected_photo.dart';
-import 'package:tema1/src/tema06_unsplash_redux/src/actions/update_color.dart';
-import 'package:tema1/src/tema06_unsplash_redux/src/actions/update_field.dart';
-import 'package:tema1/src/tema06_unsplash_redux/src/actions/update_query.dart';
-import 'package:tema1/src/tema06_unsplash_redux/src/containers/color_container.dart';
-import 'package:tema1/src/tema06_unsplash_redux/src/containers/is_loading_container.dart';
-import 'package:tema1/src/tema06_unsplash_redux/src/containers/order_by_container.dart';
-import 'package:tema1/src/tema06_unsplash_redux/src/containers/page_container.dart';
-import 'package:tema1/src/tema06_unsplash_redux/src/containers/photos_container.dart';
-import 'package:tema1/src/tema06_unsplash_redux/src/models/app_state.dart';
-import 'package:tema1/src/tema06_unsplash_redux/src/models/photo.dart';
+import 'package:tema1/src/tema07_unsplash_redux/src/actions/index.dart';
+import 'package:tema1/src/tema07_unsplash_redux/src/containers/index.dart';
+import 'package:tema1/src/tema07_unsplash_redux/src/models/index.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);

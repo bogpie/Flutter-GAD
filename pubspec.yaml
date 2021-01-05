@@ -25,6 +25,9 @@ dependencies:
   redux: ^4.0.0+3
   flutter_redux: ^0.7.0
 
+  redux_epics: ^0.14.0
+  rxdart: any
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

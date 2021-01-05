@@ -1,8 +1,9 @@
-import 'package:tema1/src/tema06_movie_redux/src/actions/update_order_by.dart';
 import 'package:tema1/src/tema06_unsplash_redux/src/actions/get_photos.dart';
 import 'package:tema1/src/tema06_unsplash_redux/src/actions/set_selected_photo.dart';
 import 'package:tema1/src/tema06_unsplash_redux/src/actions/update_color.dart';
 import 'package:tema1/src/tema06_unsplash_redux/src/actions/update_field.dart';
+import 'package:tema1/src/tema06_unsplash_redux/src/actions/update_order_by.dart';
+//import 'package:tema1/src/tema06_movie_redux/src/actions/update_order_by.dart';
 import 'package:tema1/src/tema06_unsplash_redux/src/actions/update_query.dart';
 import 'package:tema1/src/tema06_unsplash_redux/src/models/app_state.dart';
 

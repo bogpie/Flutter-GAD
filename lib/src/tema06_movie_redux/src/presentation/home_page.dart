@@ -1,7 +1,3 @@
-// File created by
-// Lung Razvan <long1eu>
-// on 15/12/2020
-
 import 'package:built_collection/built_collection.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
