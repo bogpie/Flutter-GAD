@@ -256,36 +256,52 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   _$AppState _$v;
 
   ListBuilder<Photo> _photos;
+
   ListBuilder<Photo> get photos => _$this._photos ??= new ListBuilder<Photo>();
+
   set photos(ListBuilder<Photo> photos) => _$this._photos = photos;
 
   int _page;
+
   int get page => _$this._page;
+
   set page(int page) => _$this._page = page;
 
   String _query;
+
   String get query => _$this._query;
+
   set query(String query) => _$this._query = query;
 
   String _field;
+
   String get field => _$this._field;
+
   set field(String field) => _$this._field = field;
 
   String _orderBy;
+
   String get orderBy => _$this._orderBy;
+
   set orderBy(String orderBy) => _$this._orderBy = orderBy;
 
   String _color;
+
   String get color => _$this._color;
+
   set color(String color) => _$this._color = color;
 
   String _selectedPhoto;
+
   String get selectedPhoto => _$this._selectedPhoto;
+
   set selectedPhoto(String selectedPhoto) =>
       _$this._selectedPhoto = selectedPhoto;
 
   bool _isLoading;
+
   bool get isLoading => _$this._isLoading;
+
   set isLoading(bool isLoading) => _$this._isLoading = isLoading;
 
   AppStateBuilder();
@@ -433,28 +449,40 @@ class PhotoBuilder implements Builder<Photo, PhotoBuilder> {
   _$Photo _$v;
 
   String _id;
+
   String get id => _$this._id;
+
   set id(String id) => _$this._id = id;
 
   int _width;
+
   int get width => _$this._width;
+
   set width(int width) => _$this._width = width;
 
   int _height;
+
   int get height => _$this._height;
+
   set height(int height) => _$this._height = height;
 
   String _color;
+
   String get color => _$this._color;
+
   set color(String color) => _$this._color = color;
 
   String _altDescription;
+
   String get altDescription => _$this._altDescription;
+
   set altDescription(String altDescription) =>
       _$this._altDescription = altDescription;
 
   UrlsBuilder _urls;
+
   UrlsBuilder get urls => _$this._urls ??= new UrlsBuilder();
+
   set urls(UrlsBuilder urls) => _$this._urls = urls;
 
   PhotoBuilder();
@@ -589,23 +617,33 @@ class UrlsBuilder implements Builder<Urls, UrlsBuilder> {
   _$Urls _$v;
 
   String _raw;
+
   String get raw => _$this._raw;
+
   set raw(String raw) => _$this._raw = raw;
 
   String _full;
+
   String get full => _$this._full;
+
   set full(String full) => _$this._full = full;
 
   String _regular;
+
   String get regular => _$this._regular;
+
   set regular(String regular) => _$this._regular = regular;
 
   String _small;
+
   String get small => _$this._small;
+
   set small(String small) => _$this._small = small;
 
   String _thumb;
+
   String get thumb => _$this._thumb;
+
   set thumb(String thumb) => _$this._thumb = thumb;
 
   UrlsBuilder();
