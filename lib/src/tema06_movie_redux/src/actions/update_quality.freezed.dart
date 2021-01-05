@@ -34,18 +34,18 @@ mixin _$UpdateQuality {
 
 /// @nodoc
 abstract class $UpdateQualityCopyWith<$Res> {
-  factory $UpdateQualityCopyWith(
-          UpdateQuality value, $Res Function(UpdateQuality) then) =
+  factory $UpdateQualityCopyWith(UpdateQuality value, $Res Function(UpdateQuality) then) =
       _$UpdateQualityCopyWithImpl<$Res>;
+
   $Res call({String quality});
 }
 
 /// @nodoc
-class _$UpdateQualityCopyWithImpl<$Res>
-    implements $UpdateQualityCopyWith<$Res> {
+class _$UpdateQualityCopyWithImpl<$Res> implements $UpdateQualityCopyWith<$Res> {
   _$UpdateQualityCopyWithImpl(this._value, this._then);
 
   final UpdateQuality _value;
+
   // ignore: unused_field
   final $Res Function(UpdateQuality) _then;
 
@@ -60,21 +60,18 @@ class _$UpdateQualityCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$UpdateQualityCopyWith<$Res>
-    implements $UpdateQualityCopyWith<$Res> {
-  factory _$UpdateQualityCopyWith(
-          _UpdateQuality value, $Res Function(_UpdateQuality) then) =
+abstract class _$UpdateQualityCopyWith<$Res> implements $UpdateQualityCopyWith<$Res> {
+  factory _$UpdateQualityCopyWith(_UpdateQuality value, $Res Function(_UpdateQuality) then) =
       __$UpdateQualityCopyWithImpl<$Res>;
+
   @override
   $Res call({String quality});
 }
 
 /// @nodoc
-class __$UpdateQualityCopyWithImpl<$Res>
-    extends _$UpdateQualityCopyWithImpl<$Res>
+class __$UpdateQualityCopyWithImpl<$Res> extends _$UpdateQualityCopyWithImpl<$Res>
     implements _$UpdateQualityCopyWith<$Res> {
-  __$UpdateQualityCopyWithImpl(
-      _UpdateQuality _value, $Res Function(_UpdateQuality) _then)
+  __$UpdateQualityCopyWithImpl(_UpdateQuality _value, $Res Function(_UpdateQuality) _then)
       : super(_value, (v) => _then(v as _UpdateQuality));
 
   @override
@@ -106,13 +103,11 @@ class _$_UpdateQuality implements _UpdateQuality {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _UpdateQuality &&
-            (identical(other.quality, quality) ||
-                const DeepCollectionEquality().equals(other.quality, quality)));
+            (identical(other.quality, quality) || const DeepCollectionEquality().equals(other.quality, quality)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(quality);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(quality);
 
   @override
   _$UpdateQualityCopyWith<_UpdateQuality> get copyWith =>
@@ -124,6 +119,7 @@ abstract class _UpdateQuality implements UpdateQuality {
 
   @override
   String get quality;
+
   @override
   _$UpdateQualityCopyWith<_UpdateQuality> get copyWith;
 }
