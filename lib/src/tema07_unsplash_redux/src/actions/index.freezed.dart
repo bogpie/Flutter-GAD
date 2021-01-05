@@ -45,7 +45,6 @@ mixin _$GetPhotos {
     @required Result successful(List<Photo> photos),
     @required Result error(dynamic error),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>(
     Result $default(), {
@@ -53,14 +52,12 @@ mixin _$GetPhotos {
     Result error(dynamic error),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>(
     Result $default(GetPhotosStart value), {
     @required Result successful(GetPhotosSuccessful value),
     @required Result error(GetPhotosError value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>(
     Result $default(GetPhotosStart value), {
@@ -81,7 +78,6 @@ class _$GetPhotosCopyWithImpl<$Res> implements $GetPhotosCopyWith<$Res> {
   _$GetPhotosCopyWithImpl(this._value, this._then);
 
   final GetPhotos _value;
-
   // ignore: unused_field
   final $Res Function(GetPhotos) _then;
 }
@@ -187,7 +183,6 @@ abstract class $GetPhotosSuccessfulCopyWith<$Res> {
   factory $GetPhotosSuccessfulCopyWith(
           GetPhotosSuccessful value, $Res Function(GetPhotosSuccessful) then) =
       _$GetPhotosSuccessfulCopyWithImpl<$Res>;
-
   $Res call({List<Photo> photos});
 }
 
@@ -301,7 +296,6 @@ abstract class GetPhotosSuccessful implements GetPhotos {
   const factory GetPhotosSuccessful(List<Photo> photos) = _$GetPhotosSuccessful;
 
   List<Photo> get photos;
-
   $GetPhotosSuccessfulCopyWith<GetPhotosSuccessful> get copyWith;
 }
 
@@ -310,7 +304,6 @@ abstract class $GetPhotosErrorCopyWith<$Res> {
   factory $GetPhotosErrorCopyWith(
           GetPhotosError value, $Res Function(GetPhotosError) then) =
       _$GetPhotosErrorCopyWithImpl<$Res>;
-
   $Res call({dynamic error});
 }
 
@@ -423,7 +416,6 @@ abstract class GetPhotosError implements GetPhotos {
   const factory GetPhotosError(dynamic error) = _$GetPhotosError;
 
   dynamic get error;
-
   $GetPhotosErrorCopyWith<GetPhotosError> get copyWith;
 }
 
@@ -455,7 +447,6 @@ abstract class $SetSelectedPhotoCopyWith<$Res> {
   factory $SetSelectedPhotoCopyWith(
           SetSelectedPhoto value, $Res Function(SetSelectedPhoto) then) =
       _$SetSelectedPhotoCopyWithImpl<$Res>;
-
   $Res call({String photoId});
 }
 
@@ -465,7 +456,6 @@ class _$SetSelectedPhotoCopyWithImpl<$Res>
   _$SetSelectedPhotoCopyWithImpl(this._value, this._then);
 
   final SetSelectedPhoto _value;
-
   // ignore: unused_field
   final $Res Function(SetSelectedPhoto) _then;
 
@@ -485,7 +475,6 @@ abstract class $SetSelectedPhoto$CopyWith<$Res>
   factory $SetSelectedPhoto$CopyWith(
           SetSelectedPhoto$ value, $Res Function(SetSelectedPhoto$) then) =
       _$SetSelectedPhoto$CopyWithImpl<$Res>;
-
   @override
   $Res call({String photoId});
 }
@@ -545,7 +534,6 @@ abstract class SetSelectedPhoto$ implements SetSelectedPhoto {
 
   @override
   String get photoId;
-
   @override
   $SetSelectedPhoto$CopyWith<SetSelectedPhoto$> get copyWith;
 }
@@ -578,7 +566,6 @@ abstract class $UpdateColorCopyWith<$Res> {
   factory $UpdateColorCopyWith(
           UpdateColor value, $Res Function(UpdateColor) then) =
       _$UpdateColorCopyWithImpl<$Res>;
-
   $Res call({String color});
 }
 
@@ -587,7 +574,6 @@ class _$UpdateColorCopyWithImpl<$Res> implements $UpdateColorCopyWith<$Res> {
   _$UpdateColorCopyWithImpl(this._value, this._then);
 
   final UpdateColor _value;
-
   // ignore: unused_field
   final $Res Function(UpdateColor) _then;
 
@@ -607,7 +593,6 @@ abstract class _$UpdateColorCopyWith<$Res>
   factory _$UpdateColorCopyWith(
           _UpdateColor value, $Res Function(_UpdateColor) then) =
       __$UpdateColorCopyWithImpl<$Res>;
-
   @override
   $Res call({String color});
 }
@@ -666,7 +651,6 @@ abstract class _UpdateColor implements UpdateColor {
 
   @override
   String get color;
-
   @override
   _$UpdateColorCopyWith<_UpdateColor> get copyWith;
 }
@@ -699,7 +683,6 @@ abstract class $UpdateFieldCopyWith<$Res> {
   factory $UpdateFieldCopyWith(
           UpdateField value, $Res Function(UpdateField) then) =
       _$UpdateFieldCopyWithImpl<$Res>;
-
   $Res call({String field});
 }
 
@@ -708,7 +691,6 @@ class _$UpdateFieldCopyWithImpl<$Res> implements $UpdateFieldCopyWith<$Res> {
   _$UpdateFieldCopyWithImpl(this._value, this._then);
 
   final UpdateField _value;
-
   // ignore: unused_field
   final $Res Function(UpdateField) _then;
 
@@ -728,7 +710,6 @@ abstract class _$UpdateFieldCopyWith<$Res>
   factory _$UpdateFieldCopyWith(
           _UpdateField value, $Res Function(_UpdateField) then) =
       __$UpdateFieldCopyWithImpl<$Res>;
-
   @override
   $Res call({String field});
 }
@@ -787,7 +768,6 @@ abstract class _UpdateField implements UpdateField {
 
   @override
   String get field;
-
   @override
   _$UpdateFieldCopyWith<_UpdateField> get copyWith;
 }
@@ -820,7 +800,6 @@ abstract class $UpdateOrderByCopyWith<$Res> {
   factory $UpdateOrderByCopyWith(
           UpdateOrderBy value, $Res Function(UpdateOrderBy) then) =
       _$UpdateOrderByCopyWithImpl<$Res>;
-
   $Res call({String orderBy});
 }
 
@@ -830,7 +809,6 @@ class _$UpdateOrderByCopyWithImpl<$Res>
   _$UpdateOrderByCopyWithImpl(this._value, this._then);
 
   final UpdateOrderBy _value;
-
   // ignore: unused_field
   final $Res Function(UpdateOrderBy) _then;
 
@@ -850,7 +828,6 @@ abstract class _$UpdateOrderByCopyWith<$Res>
   factory _$UpdateOrderByCopyWith(
           _UpdateOrderBy value, $Res Function(_UpdateOrderBy) then) =
       __$UpdateOrderByCopyWithImpl<$Res>;
-
   @override
   $Res call({String orderBy});
 }
@@ -910,7 +887,6 @@ abstract class _UpdateOrderBy implements UpdateOrderBy {
 
   @override
   String get orderBy;
-
   @override
   _$UpdateOrderByCopyWith<_UpdateOrderBy> get copyWith;
 }
@@ -943,7 +919,6 @@ abstract class $UpdateQueryCopyWith<$Res> {
   factory $UpdateQueryCopyWith(
           UpdateQuery value, $Res Function(UpdateQuery) then) =
       _$UpdateQueryCopyWithImpl<$Res>;
-
   $Res call({String query});
 }
 
@@ -952,7 +927,6 @@ class _$UpdateQueryCopyWithImpl<$Res> implements $UpdateQueryCopyWith<$Res> {
   _$UpdateQueryCopyWithImpl(this._value, this._then);
 
   final UpdateQuery _value;
-
   // ignore: unused_field
   final $Res Function(UpdateQuery) _then;
 
@@ -972,7 +946,6 @@ abstract class _$UpdateQueryCopyWith<$Res>
   factory _$UpdateQueryCopyWith(
           _UpdateQuery value, $Res Function(_UpdateQuery) then) =
       __$UpdateQueryCopyWithImpl<$Res>;
-
   @override
   $Res call({String query});
 }
@@ -1031,7 +1004,6 @@ abstract class _UpdateQuery implements UpdateQuery {
 
   @override
   String get query;
-
   @override
   _$UpdateQueryCopyWith<_UpdateQuery> get copyWith;
 }

@@ -16,8 +16,7 @@ class _$PhotoSerializer implements StructuredSerializer<Photo> {
   final String wireName = 'Photo';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Photo object,
-      {FullType specifiedType = FullType.unspecified}) {
+  Iterable<Object> serialize(Serializers serializers, Photo object, {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'id',
       serializers.serialize(object.id, specifiedType: const FullType(String)),
@@ -26,20 +25,15 @@ class _$PhotoSerializer implements StructuredSerializer<Photo> {
       'height',
       serializers.serialize(object.height, specifiedType: const FullType(int)),
       'color',
-      serializers.serialize(object.color,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.color, specifiedType: const FullType(String)),
     ];
     if (object.altDescription != null) {
       result
         ..add('alt_description')
-        ..add(serializers.serialize(object.altDescription,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(object.altDescription, specifiedType: const FullType(String)));
     }
     if (object.urls != null) {
-      result
-        ..add('urls')
-        ..add(serializers.serialize(object.urls,
-            specifiedType: const FullType(Urls)));
+      result..add('urls')..add(serializers.serialize(object.urls, specifiedType: const FullType(Urls)));
     }
     return result;
   }
@@ -56,28 +50,22 @@ class _$PhotoSerializer implements StructuredSerializer<Photo> {
       final dynamic value = iterator.current;
       switch (key) {
         case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.id = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'width':
-          result.width = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.width = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'height':
-          result.height = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.height = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'color':
-          result.color = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.color = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'alt_description':
-          result.altDescription = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.altDescription = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'urls':
-          result.urls.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Urls)) as Urls);
+          result.urls.replace(serializers.deserialize(value, specifiedType: const FullType(Urls)) as Urls);
           break;
       }
     }
@@ -93,22 +81,18 @@ class _$UrlsSerializer implements StructuredSerializer<Urls> {
   final String wireName = 'Urls';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Urls object,
-      {FullType specifiedType = FullType.unspecified}) {
+  Iterable<Object> serialize(Serializers serializers, Urls object, {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'raw',
       serializers.serialize(object.raw, specifiedType: const FullType(String)),
       'full',
       serializers.serialize(object.full, specifiedType: const FullType(String)),
       'regular',
-      serializers.serialize(object.regular,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.regular, specifiedType: const FullType(String)),
       'small',
-      serializers.serialize(object.small,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.small, specifiedType: const FullType(String)),
       'thumb',
-      serializers.serialize(object.thumb,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.thumb, specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -126,24 +110,19 @@ class _$UrlsSerializer implements StructuredSerializer<Urls> {
       final dynamic value = iterator.current;
       switch (key) {
         case 'raw':
-          result.raw = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.raw = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'full':
-          result.full = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.full = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'regular':
-          result.regular = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.regular = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'small':
-          result.small = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.small = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'thumb':
-          result.thumb = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.thumb = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
       }
     }
@@ -170,18 +149,10 @@ class _$AppState extends AppState {
   @override
   final bool isLoading;
 
-  factory _$AppState([void Function(AppStateBuilder) updates]) =>
-      (new AppStateBuilder()..update(updates)).build();
+  factory _$AppState([void Function(AppStateBuilder) updates]) => (new AppStateBuilder()..update(updates)).build();
 
   _$AppState._(
-      {this.photos,
-      this.page,
-      this.query,
-      this.field,
-      this.orderBy,
-      this.color,
-      this.selectedPhoto,
-      this.isLoading})
+      {this.photos, this.page, this.query, this.field, this.orderBy, this.color, this.selectedPhoto, this.isLoading})
       : super._() {
     if (photos == null) {
       throw new BuiltValueNullFieldError('AppState', 'photos');
@@ -201,8 +172,7 @@ class _$AppState extends AppState {
   }
 
   @override
-  AppState rebuild(void Function(AppStateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  AppState rebuild(void Function(AppStateBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   AppStateBuilder toBuilder() => new AppStateBuilder()..replace(this);
@@ -226,11 +196,7 @@ class _$AppState extends AppState {
     return $jf($jc(
         $jc(
             $jc(
-                $jc(
-                    $jc(
-                        $jc($jc($jc(0, photos.hashCode), page.hashCode),
-                            query.hashCode),
-                        field.hashCode),
+                $jc($jc($jc($jc($jc(0, photos.hashCode), page.hashCode), query.hashCode), field.hashCode),
                     orderBy.hashCode),
                 color.hashCode),
             selectedPhoto.hashCode),
@@ -295,8 +261,7 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
 
   String get selectedPhoto => _$this._selectedPhoto;
 
-  set selectedPhoto(String selectedPhoto) =>
-      _$this._selectedPhoto = selectedPhoto;
+  set selectedPhoto(String selectedPhoto) => _$this._selectedPhoto = selectedPhoto;
 
   bool _isLoading;
 
@@ -354,8 +319,7 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
         _$failedField = 'photos';
         photos.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'AppState', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError('AppState', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -378,17 +342,9 @@ class _$Photo extends Photo {
   @override
   final Urls urls;
 
-  factory _$Photo([void Function(PhotoBuilder) updates]) =>
-      (new PhotoBuilder()..update(updates)).build();
+  factory _$Photo([void Function(PhotoBuilder) updates]) => (new PhotoBuilder()..update(updates)).build();
 
-  _$Photo._(
-      {this.id,
-      this.width,
-      this.height,
-      this.color,
-      this.altDescription,
-      this.urls})
-      : super._() {
+  _$Photo._({this.id, this.width, this.height, this.color, this.altDescription, this.urls}) : super._() {
     if (id == null) {
       throw new BuiltValueNullFieldError('Photo', 'id');
     }
@@ -404,8 +360,7 @@ class _$Photo extends Photo {
   }
 
   @override
-  Photo rebuild(void Function(PhotoBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  Photo rebuild(void Function(PhotoBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   PhotoBuilder toBuilder() => new PhotoBuilder()..replace(this);
@@ -425,9 +380,7 @@ class _$Photo extends Photo {
   @override
   int get hashCode {
     return $jf($jc(
-        $jc(
-            $jc($jc($jc($jc(0, id.hashCode), width.hashCode), height.hashCode),
-                color.hashCode),
+        $jc($jc($jc($jc($jc(0, id.hashCode), width.hashCode), height.hashCode), color.hashCode),
             altDescription.hashCode),
         urls.hashCode));
   }
@@ -476,8 +429,7 @@ class PhotoBuilder implements Builder<Photo, PhotoBuilder> {
 
   String get altDescription => _$this._altDescription;
 
-  set altDescription(String altDescription) =>
-      _$this._altDescription = altDescription;
+  set altDescription(String altDescription) => _$this._altDescription = altDescription;
 
   UrlsBuilder _urls;
 
@@ -519,20 +471,14 @@ class PhotoBuilder implements Builder<Photo, PhotoBuilder> {
     try {
       _$result = _$v ??
           new _$Photo._(
-              id: id,
-              width: width,
-              height: height,
-              color: color,
-              altDescription: altDescription,
-              urls: _urls?.build());
+              id: id, width: width, height: height, color: color, altDescription: altDescription, urls: _urls?.build());
     } catch (_) {
       String _$failedField;
       try {
         _$failedField = 'urls';
         _urls?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'Photo', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError('Photo', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -553,11 +499,9 @@ class _$Urls extends Urls {
   @override
   final String thumb;
 
-  factory _$Urls([void Function(UrlsBuilder) updates]) =>
-      (new UrlsBuilder()..update(updates)).build();
+  factory _$Urls([void Function(UrlsBuilder) updates]) => (new UrlsBuilder()..update(updates)).build();
 
-  _$Urls._({this.raw, this.full, this.regular, this.small, this.thumb})
-      : super._() {
+  _$Urls._({this.raw, this.full, this.regular, this.small, this.thumb}) : super._() {
     if (raw == null) {
       throw new BuiltValueNullFieldError('Urls', 'raw');
     }
@@ -576,8 +520,7 @@ class _$Urls extends Urls {
   }
 
   @override
-  Urls rebuild(void Function(UrlsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  Urls rebuild(void Function(UrlsBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   UrlsBuilder toBuilder() => new UrlsBuilder()..replace(this);
@@ -595,10 +538,8 @@ class _$Urls extends Urls {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc($jc(0, raw.hashCode), full.hashCode), regular.hashCode),
-            small.hashCode),
-        thumb.hashCode));
+    return $jf(
+        $jc($jc($jc($jc($jc(0, raw.hashCode), full.hashCode), regular.hashCode), small.hashCode), thumb.hashCode));
   }
 
   @override
@@ -675,9 +616,7 @@ class UrlsBuilder implements Builder<Urls, UrlsBuilder> {
 
   @override
   _$Urls build() {
-    final _$result = _$v ??
-        new _$Urls._(
-            raw: raw, full: full, regular: regular, small: small, thumb: thumb);
+    final _$result = _$v ?? new _$Urls._(raw: raw, full: full, regular: regular, small: small, thumb: thumb);
     replace(_$result);
     return _$result;
   }

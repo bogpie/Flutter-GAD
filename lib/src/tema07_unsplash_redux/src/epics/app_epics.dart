@@ -29,5 +29,4 @@ class AppEpics {
         .map<dynamic>((List<Photo> photos) => GetPhotosSuccessful(photos))
         .onErrorReturnWith((dynamic error) => GetPhotosError(error));
   }
-
 }
