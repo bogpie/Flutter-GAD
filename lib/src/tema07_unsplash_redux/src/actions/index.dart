@@ -1,7 +1,7 @@
 library actions;
 
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:tema1/src/tema07_unsplash_redux/src/models/index.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'get_photos.dart';
 
